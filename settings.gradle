@@ -14,9 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ElectronicsShopApp"
 include ':app'
-include ':feature'
 include ':core'
 include ':common'
-include ':feature:productdetales'
+include ':feature:productdetails'
 include ':feature:mainscreen'
 include ':feature:mycart'

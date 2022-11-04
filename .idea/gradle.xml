@@ -15,7 +15,7 @@
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/mainscreen" />
             <option value="$PROJECT_DIR$/feature/mycart" />
-            <option value="$PROJECT_DIR$/feature/productdetales" />
+            <option value="$PROJECT_DIR$/feature/productdetails" />
           </set>
         </option>
       </GradleProjectSettings>
