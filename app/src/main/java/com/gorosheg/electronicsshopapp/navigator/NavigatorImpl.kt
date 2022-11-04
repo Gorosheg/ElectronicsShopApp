@@ -1,7 +1,8 @@
-package com.gorosheg.electronicsshopapp
+package com.gorosheg.electronicsshopapp.navigator
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.gorosheg.electronicsshopapp.R
 import com.gorosheg.electronicsshopapp.feature.home.navigator.HomeNavigator
 import com.gorosheg.electronicsshopapp.feature.home.presentation.HomeFragment
 import com.gorosheg.electronicsshopapp.feature.mycart.navigator.MyCartNavigator

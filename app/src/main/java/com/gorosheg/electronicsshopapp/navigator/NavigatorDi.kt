@@ -1,4 +1,4 @@
-package com.gorosheg.electronicsshopapp
+package com.gorosheg.electronicsshopapp.navigator
 
 import com.gorosheg.electronicsshopapp.feature.home.navigator.HomeNavigator
 import com.gorosheg.electronicsshopapp.feature.mycart.navigator.MyCartNavigator

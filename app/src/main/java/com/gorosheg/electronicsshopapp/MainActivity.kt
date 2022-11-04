@@ -2,6 +2,7 @@ package com.gorosheg.electronicsshopapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.gorosheg.electronicsshopapp.navigator.MainNavigator
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
