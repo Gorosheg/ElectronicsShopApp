@@ -6,15 +6,15 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
-    private val navigator: MajorNavigator by inject()
+    private val navigator: MainNavigator by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        createMainFragment()
+        createHomeFragment()
     }
 
-    private fun createMainFragment() {
-        navigator.navigateToMainScreen(this)
+    private fun createHomeFragment() {
+        navigator.navigateToHome(this)
     }
 }

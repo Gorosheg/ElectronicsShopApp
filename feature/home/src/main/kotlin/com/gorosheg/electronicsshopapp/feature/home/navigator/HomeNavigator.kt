@@ -1,7 +1,7 @@
-package com.gorosheg.electronicsshopapp.feature.mainscreen.navigator
+package com.gorosheg.electronicsshopapp.feature.home.navigator
 
 import androidx.fragment.app.FragmentActivity
 
-interface MainScreenNavigator {
+interface HomeNavigator {
     fun navigateToProductDetails(activity: FragmentActivity)
 }
