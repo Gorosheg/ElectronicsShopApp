@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -26,9 +27,17 @@ android {
     }
     kotlinOptions {
         jvmTarget = '11'
+        freeCompilerArgs += "-Xcontext-receivers"
+    }
+    viewBinding {
+        enabled = true
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
     implementation project(':common')
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.2'
 }
