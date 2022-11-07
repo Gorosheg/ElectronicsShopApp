@@ -12,10 +12,8 @@ internal sealed interface RecyclerItems : ListItem {
         val subtitle: String,
     ) : RecyclerItems
 
-    data class Category(
-        val name: String,
-        val icon: String,
-        val isEnabled: Boolean,
+    data class Categories(
+        val categories: List<Category>
     ) : RecyclerItems
 
     data class HotSales(
