@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.electronicsshopapp.feature.home.navigator.HomeNavigator
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HotSale
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.RecyclerItems
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.CommonAdapter
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.headerDelegate
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.hotSalesDelegate
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.searchDelegate
 import com.gorosheg.mainscreen.R
 import com.gorosheg.mainscreen.databinding.FragmentHomeBinding
@@ -25,6 +27,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         headerDelegate(),
         searchDelegate(),
         headerDelegate(),
+        hotSalesDelegate(),
         headerDelegate()
     )
 
@@ -35,6 +38,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 RecyclerItems.Header(title = "Select Category", subtitle = "view all"),
                 RecyclerItems.Search,
                 RecyclerItems.Header("Hot sales", "see more"),
+                RecyclerItems.HotSales(listOf(
+                    HotSale("Iphone 12", "Súper. Mega. Rápido.", true),
+                    HotSale("Iphone 45", "qwerty", false)
+                )),
                 RecyclerItems.Header("Best Seller", "see more"),
             )
 

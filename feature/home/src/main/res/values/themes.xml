@@ -4,6 +4,7 @@
     <style name="Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="color">#F5F5F5</item>
     </style>
 
     <style name="BottomBar" parent="@style/Widget.MaterialComponents.BottomAppBar">

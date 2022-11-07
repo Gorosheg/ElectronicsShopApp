@@ -5,16 +5,28 @@ import org.w3c.dom.Text
 
 internal sealed interface RecyclerItems : ListItem {
 
-    object Search : RecyclerItems {
-
-        override val id: String = "Search"
-    }
+    object Search : RecyclerItems
 
     data class Header(
         val title: String,
         val subtitle: String,
-    ) : RecyclerItems {
+    ) : RecyclerItems
 
-        override val id: String = title
-    }
+    data class Category(
+        val name: String,
+        val icon: String,
+        val isEnabled: Boolean,
+    ) : RecyclerItems
+
+    data class HotSales(
+        val sales: List<HotSale>,
+    ) : RecyclerItems
+
+    data class BestSeller(
+        val image: String,
+        val price: String,
+        val priceWithoutSale: String,
+        val description: String,
+        val isLiked: Boolean,
+    ) : RecyclerItems
 }
