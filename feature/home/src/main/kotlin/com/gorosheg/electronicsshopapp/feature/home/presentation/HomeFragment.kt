@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.electronicsshopapp.feature.home.navigator.HomeNavigator
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.BestSellerProduct
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.Category
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HotSale
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.RecyclerItems
@@ -25,7 +26,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         searchDelegate(),
         headerDelegate(),
         hotSalesDelegate(),
-        headerDelegate()
+        headerDelegate(),
+        bestSellerDelegate()
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,6 +52,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 )),
 
                 RecyclerItems.Header("Best Seller", "see more"),
+                RecyclerItems.BestSeller(listOf(
+                    BestSellerProduct("", "300", "600", "asd", true),
+                    BestSellerProduct("", "567", "600", "hfd", false),
+                    BestSellerProduct("", "300", "874", "asd", true),
+                ))
             )
 
             adapter.items = adapterItems

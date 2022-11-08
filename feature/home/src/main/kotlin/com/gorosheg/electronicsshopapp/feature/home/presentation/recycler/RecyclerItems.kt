@@ -1,7 +1,6 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler
 
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.ListItem
-import org.w3c.dom.Text
 
 internal sealed interface RecyclerItems : ListItem {
 
@@ -13,7 +12,7 @@ internal sealed interface RecyclerItems : ListItem {
     ) : RecyclerItems
 
     data class Categories(
-        val categories: List<Category>
+        val categories: List<Category>,
     ) : RecyclerItems
 
     data class HotSales(
@@ -21,10 +20,6 @@ internal sealed interface RecyclerItems : ListItem {
     ) : RecyclerItems
 
     data class BestSeller(
-        val image: String,
-        val price: String,
-        val priceWithoutSale: String,
-        val description: String,
-        val isLiked: Boolean,
+        val products: List<BestSellerProduct>,
     ) : RecyclerItems
 }
