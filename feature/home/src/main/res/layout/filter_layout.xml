@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/exit_Background"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/dark_rect_background_10"
+        app:layout_constraintEnd_toStartOf="@+id/filterTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/exit_Background"
+        app:layout_constraintEnd_toEndOf="@+id/exit_Background"
+        app:layout_constraintStart_toStartOf="@+id/exit_Background"
+        app:layout_constraintTop_toTopOf="@+id/exit_Background"
+        app:srcCompat="@drawable/ic_exit" />
+
+    <TextView
+        android:id="@+id/filterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:text="Filter options"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/done"
+        app:layout_constraintStart_toEndOf="@id/exit_Background"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/orange"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/filterTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="48dp"
+        android:text="Brand"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exit_Background" />
+
+    <FrameLayout
+        android:id="@+id/brandFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="31dp"
+        android:background="@drawable/grey_rect_stroke_5"
+        android:foreground="?selectableItemBackground"
+        android:padding="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Brand">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:text="Samsung"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="6dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/ic_arrow" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="18dp"
+        android:text="Price"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brandFilter" />
+
+    <FrameLayout
+        android:id="@+id/priceFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="31dp"
+        android:background="@drawable/grey_rect_stroke_5"
+        android:foreground="?selectableItemBackground"
+        android:padding="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:text="$300 - $500"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="6dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/ic_arrow" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="18dp"
+        android:text="Size"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceFilter" />
+
+    <FrameLayout
+        android:id="@+id/sizeFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/grey_rect_stroke_5"
+        android:foreground="?selectableItemBackground"
+        android:padding="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/size">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:text="4.5 to 5.5 inches"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="6dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/ic_arrow" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="14dp"
     android:layout_marginBottom="12dp"
-    android:background="@drawable/best_seller_background">
+    android:background="@drawable/white_rect_background_10">
 
     <ImageView
         android:id="@+id/productImage"

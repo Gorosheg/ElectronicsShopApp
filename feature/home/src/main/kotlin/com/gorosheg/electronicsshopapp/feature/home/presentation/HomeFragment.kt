@@ -30,39 +30,41 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         bestSellerDelegate()
     )
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        with(binding) {
-            val adapterItems: List<RecyclerItems> = listOf(
-                RecyclerItems.Header("Select Category", "view all"),
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
+        val adapterItems: List<RecyclerItems> = listOf(
+            RecyclerItems.Header("Select Category", "view all"),
 
-                RecyclerItems.Categories(listOf(
-                    Category("Phones", R.drawable.ic_phones, true),
-                    Category("Computer", R.drawable.ic_computer, false),
-                    Category("Health", R.drawable.ic_health, false),
-                    Category("Books", R.drawable.ic_books, false),
-                )),
+            RecyclerItems.Categories(listOf(
+                Category("Phones", R.drawable.ic_phones, true),
+                Category("Computer", R.drawable.ic_computer, false),
+                Category("Health", R.drawable.ic_health, false),
+                Category("Books", R.drawable.ic_books, false),
+            )),
 
-                RecyclerItems.Search,
-                RecyclerItems.Header("Hot sales", "see more"),
+            RecyclerItems.Search,
+            RecyclerItems.Header("Hot sales", "see more"),
 
-                RecyclerItems.HotSales(listOf(
-                    HotSale("Iphone 12", "Súper. Mega. Rápido.", true),
-                    HotSale("Iphone 45", "qwerty", false)
-                )),
+            RecyclerItems.HotSales(listOf(
+                HotSale("Iphone 12", "Súper. Mega. Rápido.", true),
+                HotSale("Iphone 45", "qwerty", false)
+            )),
 
-                RecyclerItems.Header("Best Seller", "see more"),
-                RecyclerItems.BestSeller(listOf(
-                    BestSellerProduct("", "300", "600", "asd", true),
-                    BestSellerProduct("", "567", "600", "hfd", false),
-                    BestSellerProduct("", "300", "874", "asd", true),
-                ))
-            )
+            RecyclerItems.Header("Best Seller", "see more"),
+            RecyclerItems.BestSeller(listOf(
+                BestSellerProduct("", "300", "600", "asd", true),
+                BestSellerProduct("", "567", "600", "hfd", false),
+                BestSellerProduct("", "300", "874", "asd", true),
+            ))
+        )
 
-            adapter.items = adapterItems
-            homeMainRecycler.adapter = adapter
-            // bestSellerRecycler.layoutManager = GridLayoutManager(requireActivity(), 2)
-        }
+        adapter.items = adapterItems
+        homeMainRecycler.adapter = adapter
+
+        filterIcon.setOnClickListener { showFilterDialog() }
+    }
+
+    private fun showFilterDialog() {
+        FilterFragment().show(childFragmentManager, "tag")
     }
 
     companion object {
