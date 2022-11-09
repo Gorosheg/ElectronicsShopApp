@@ -2,7 +2,7 @@ package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.deleg
 
 import androidx.core.view.isVisible
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HotSale
-import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.RecyclerItems.HotSales
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HomeItem.HotSales
 import com.gorosheg.mainscreen.databinding.HotSaleBinding
 import com.gorosheg.mainscreen.databinding.ListOfHotSalesBinding
 

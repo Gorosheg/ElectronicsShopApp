@@ -3,20 +3,20 @@ package com.gorosheg.electronicsshopapp.feature.home.presentation
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.electronicsshopapp.feature.home.navigator.HomeNavigator
-import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.BestSellerProduct
-import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.Category
-import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HotSale
-import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.RecyclerItems
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.*
 import com.gorosheg.mainscreen.R
 import com.gorosheg.mainscreen.databinding.FragmentHomeBinding
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import org.koin.android.ext.android.inject
-
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
+    private val viewModel: HomeViewModel by viewModel()
     private val navigator: HomeNavigator by inject()
     private val binding: FragmentHomeBinding by viewBinding()
 
@@ -31,36 +31,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
-        val adapterItems: List<RecyclerItems> = listOf(
-            RecyclerItems.Header("Select Category", "view all"),
-
-            RecyclerItems.Categories(listOf(
-                Category("Phones", R.drawable.ic_phones, true),
-                Category("Computer", R.drawable.ic_computer, false),
-                Category("Health", R.drawable.ic_health, false),
-                Category("Books", R.drawable.ic_books, false),
-            )),
-
-            RecyclerItems.Search,
-            RecyclerItems.Header("Hot sales", "see more"),
-
-            RecyclerItems.HotSales(listOf(
-                HotSale("Iphone 12", "Súper. Mega. Rápido.", true),
-                HotSale("Iphone 45", "qwerty", false)
-            )),
-
-            RecyclerItems.Header("Best Seller", "see more"),
-            RecyclerItems.BestSeller(listOf(
-                BestSellerProduct("", "300", "600", "asd", true),
-                BestSellerProduct("", "567", "600", "hfd", false),
-                BestSellerProduct("", "300", "874", "asd", true),
-            ))
-        )
-
-        adapter.items = adapterItems
+        viewModel.state.onEach(::render).launchIn(lifecycleScope)
         homeMainRecycler.adapter = adapter
-
         filterIcon.setOnClickListener { showFilterDialog() }
+    }
+
+    private fun render(state: HomeViewState) {
+        adapter.items = state.items
+        adapter.notifyDataSetChanged()
     }
 
     private fun showFilterDialog() {

@@ -1,15 +1,13 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate
 
-import android.content.Context
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.BestSellerProduct
-import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.RecyclerItems
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HomeItem
 import com.gorosheg.mainscreen.R
 import com.gorosheg.mainscreen.databinding.BestSellerProductBinding
 import com.gorosheg.mainscreen.databinding.ListOfBestSellerBinding
 
-internal fun bestSellerDelegate() = adapterDelegate<RecyclerItems.BestSeller, ListOfBestSellerBinding>(
+internal fun bestSellerDelegate() = adapterDelegate<HomeItem.BestSeller, ListOfBestSellerBinding>(
     ListOfBestSellerBinding::inflate) {
     val bestSellerAdapter = CommonAdapter(bestSellerProductDelegate())
     bestSellerList.layoutManager = GridLayoutManager(context, 2)

@@ -2,24 +2,24 @@ package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler
 
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.ListItem
 
-internal sealed interface RecyclerItems : ListItem {
+sealed interface HomeItem : ListItem {
 
-    object Search : RecyclerItems
+    object Search : HomeItem
 
     data class Header(
         val title: String,
         val subtitle: String,
-    ) : RecyclerItems
+    ) : HomeItem
 
     data class Categories(
         val categories: List<Category>,
-    ) : RecyclerItems
+    ) : HomeItem
 
     data class HotSales(
         val sales: List<HotSale>,
-    ) : RecyclerItems
+    ) : HomeItem
 
     data class BestSeller(
         val products: List<BestSellerProduct>,
-    ) : RecyclerItems
+    ) : HomeItem
 }
