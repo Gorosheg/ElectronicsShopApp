@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="24dp">
-
+//
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/salesCarousel"
         android:layout_width="match_parent"

@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/dark_top_rounded_rect_background_30"
+        android:background="@drawable/dark_top_rounded_rect_background_radius_30"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="27dp"
             android:layout_weight="2"
-            app:srcCompat="@drawable/ic_like_3" />
+            app:srcCompat="@drawable/ic_like_white" />
 
         <ImageView
             android:id="@+id/profile"

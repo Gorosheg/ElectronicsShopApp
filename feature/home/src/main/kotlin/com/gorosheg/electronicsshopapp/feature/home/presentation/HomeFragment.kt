@@ -5,8 +5,14 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.gorosheg.electronicsshopapp.common.recycler.CommonAdapter
 import com.gorosheg.electronicsshopapp.feature.home.navigator.HomeNavigator
-import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate.*
+import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeViewState
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.bestSellerDelegate
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.categoriesDelegate
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.headerDelegate
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.hotSalesDelegate
+import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.searchDelegate
 import com.gorosheg.mainscreen.R
 import com.gorosheg.mainscreen.databinding.FragmentHomeBinding
 import kotlinx.coroutines.flow.launchIn

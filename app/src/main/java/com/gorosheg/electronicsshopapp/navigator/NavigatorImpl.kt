@@ -11,8 +11,8 @@ import com.gorosheg.electronicsshopapp.feature.productdetails.navigator.ProductD
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.ProductDetailsFragment
 
 private const val HOME = "HomeFragment"
-private const val MYCART = "MyCartFragment"
-private const val PRODUCTDETAILS = "ProductDetailsFragment"
+private const val MY_CART = "MyCartFragment"
+private const val PRODUCT_DETAILS = "ProductDetailsFragment"
 
 class NavigatorImpl : MainNavigator, HomeNavigator, ProductDetailsNavigator, MyCartNavigator {
     override fun navigateToHome(activity: FragmentActivity) {
@@ -22,12 +22,12 @@ class NavigatorImpl : MainNavigator, HomeNavigator, ProductDetailsNavigator, MyC
 
     override fun navigateToProductDetails(activity: FragmentActivity) {
         val fragment = ProductDetailsFragment.newInstance()
-        activity.navigateToNextFragment(fragment, PRODUCTDETAILS)
+        activity.navigateToNextFragment(fragment, PRODUCT_DETAILS)
     }
 
     override fun navigateToMyCart(activity: FragmentActivity) {
         val fragment = MyCartFragment.newInstance()
-        activity.navigateToNextFragment(fragment, MYCART)
+        activity.navigateToNextFragment(fragment, MY_CART)
     }
 
     private fun FragmentActivity.navigateToNextFragment(fragment: Fragment, fragmentKey: String) {

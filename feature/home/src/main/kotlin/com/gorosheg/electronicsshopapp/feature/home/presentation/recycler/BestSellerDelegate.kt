@@ -1,0 +1,41 @@
+package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler
+
+import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
+import com.gorosheg.common.R.*
+import com.gorosheg.electronicsshopapp.common.recycler.CommonAdapter
+import com.gorosheg.electronicsshopapp.common.recycler.adapterDelegate
+import com.gorosheg.electronicsshopapp.feature.home.presentation.model.BestSellerProduct
+import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeItem
+import com.gorosheg.mainscreen.databinding.BestSellerProductBinding
+import com.gorosheg.mainscreen.databinding.ListOfBestSellerBinding
+
+internal fun bestSellerDelegate() =
+    adapterDelegate<HomeItem.BestSeller, ListOfBestSellerBinding>(ListOfBestSellerBinding::inflate) {
+        val bestSellerAdapter = CommonAdapter(bestSellerProductDelegate())
+        bestSellerList.layoutManager = GridLayoutManager(context, 2)
+        bestSellerList.adapter = bestSellerAdapter
+
+        bind {
+            bestSellerAdapter.items = item.products
+        }
+    }
+
+private fun bestSellerProductDelegate() =
+    adapterDelegate<BestSellerProduct, BestSellerProductBinding>(BestSellerProductBinding::inflate) {
+        bind {
+            productName.text = item.name
+            productPrice.text = item.price
+            productPriceWithoutSale.text = item.priceWithoutSale
+
+            val likeImage =
+                if (item.isLiked) drawable.ic_like_filled
+                else drawable.ic_like_orange
+
+            like.setImageResource(likeImage)
+
+            Glide.with(root)
+                .load(item.image)
+                .into(productImage)
+        }
+    }

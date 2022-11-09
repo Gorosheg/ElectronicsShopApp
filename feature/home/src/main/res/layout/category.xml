@@ -22,7 +22,8 @@
         app:layout_constraintEnd_toEndOf="@+id/categoryBackground"
         app:layout_constraintStart_toStartOf="@+id/categoryBackground"
         app:layout_constraintTop_toTopOf="@+id/categoryBackground"
-        app:srcCompat="@drawable/ic_health" />
+        app:srcCompat="@drawable/ic_health"
+        android:contentDescription="@null" />
 
     <TextView
         android:id="@+id/categoryName"

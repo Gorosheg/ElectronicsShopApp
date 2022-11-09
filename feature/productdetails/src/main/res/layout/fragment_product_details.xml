@@ -11,7 +11,7 @@
         android:layout_width="37dp"
         android:layout_height="37dp"
         android:layout_marginTop="35dp"
-        android:background="@drawable/dark_rect_background_10"
+        android:background="@drawable/dark_rect_background_radius_10"
         app:layout_constraintEnd_toStartOf="@+id/filterTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
         android:layout_height="37dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="35dp"
-        android:background="@drawable/orange_rect_background_10"
+        android:background="@drawable/orange_rect_background_radius_10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,7 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/white_top_rounded_rect_background_30"
+        android:background="@drawable/white_top_rounded_rect_background_radius_30"
         android:paddingTop="28dp"
         android:paddingBottom="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +95,7 @@
             android:layout_width="37dp"
             android:layout_height="37dp"
             android:layout_marginEnd="37dp"
-            android:background="@drawable/dark_rect_background_10"
+            android:background="@drawable/dark_rect_background_radius_10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,7 +106,7 @@
             app:layout_constraintEnd_toEndOf="@+id/addToFavorites"
             app:layout_constraintStart_toStartOf="@+id/addToFavorites"
             app:layout_constraintTop_toTopOf="@+id/addToFavorites"
-            app:srcCompat="@drawable/ic_like_3" />
+            app:srcCompat="@drawable/ic_like_white" />
 
         <LinearLayout
             android:id="@+id/stars"
@@ -230,8 +230,8 @@
             android:layout_marginTop="35dp"
             app:layout_constraintEnd_toStartOf="@+id/sdImage"
             app:layout_constraintStart_toEndOf="@id/cameraImage"
-            app:layout_constraintTop_toBottomOf="@+id/separator"
-            app:srcCompat="@drawable/ic_parameter_3" />
+            app:layout_constraintTop_toBottomOf="@+id/separator"/>
+            <!--app:srcCompat="@drawable/ic_parameter_3"-->
 
         <ImageView
             android:id="@+id/sdImage"

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="14dp"
     android:layout_marginBottom="12dp"
-    android:background="@drawable/white_rect_background_10">
+    android:background="@drawable/white_rect_background_radius_10">
 
     <ImageView
         android:id="@+id/productImage"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="@+id/likeBackground"
         app:layout_constraintStart_toStartOf="@+id/likeBackground"
         app:layout_constraintTop_toTopOf="@+id/likeBackground"
-        app:srcCompat="@drawable/ic_like_1" />
+        app:srcCompat="@drawable/ic_like_orange" />
 
     <TextView
         android:id="@+id/productPrice"
