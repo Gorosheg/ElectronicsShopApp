@@ -1,6 +1,7 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate
 
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.BestSellerProduct
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HomeItem
 import com.gorosheg.mainscreen.R
@@ -30,5 +31,9 @@ private fun bestSellerProductDelegate() =
                 else R.drawable.ic_like_1
 
             like.setImageResource(likeImage)
+
+            Glide.with(root)
+                .load(item.image)
+                .into(productImage)
         }
     }

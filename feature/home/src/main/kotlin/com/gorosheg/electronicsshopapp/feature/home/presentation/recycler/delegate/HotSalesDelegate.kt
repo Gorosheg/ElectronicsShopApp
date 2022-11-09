@@ -1,6 +1,7 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.delegate
 
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HotSale
 import com.gorosheg.electronicsshopapp.feature.home.presentation.recycler.HomeItem.HotSales
 import com.gorosheg.mainscreen.databinding.HotSaleBinding
@@ -21,5 +22,9 @@ private fun hotSaleDelegate() = adapterDelegate<HotSale, HotSaleBinding>(HotSale
         productDescription.text = item.description
         newBackground.isVisible = item.isNew
         newText.isVisible = item.isNew
+
+        Glide.with(root)
+            .load(item.image)
+            .into(productImage)
     }
 }

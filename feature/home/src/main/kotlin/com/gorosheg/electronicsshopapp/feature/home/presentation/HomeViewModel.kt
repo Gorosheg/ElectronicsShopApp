@@ -31,18 +31,9 @@ internal class HomeViewModel(private val interactor: HomeInteractor) : ViewModel
                 HomeItem.Search,
                 HomeItem.Header("Hot sales", "see more"),
 
-                /*HomeItem.HotSales(listOf(
-                    HotSale("Iphone 12", "Súper. Mega. Rápido.", true),
-                    HotSale("Iphone 45", "qwerty", false)
-                )),*/
                 hotSales,
 
                 HomeItem.Header("Best Seller", "see more"),
-                /*HomeItem.BestSeller(listOf(
-                    BestSellerProduct("", "300", "600", "asd", true),
-                    BestSellerProduct("", "567", "600", "hfd", false),
-                    BestSellerProduct("", "300", "874", "asd", true),
-                ))*/
                 bestSellers
             )
 

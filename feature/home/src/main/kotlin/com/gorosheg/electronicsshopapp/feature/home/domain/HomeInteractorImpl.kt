@@ -27,7 +27,12 @@ class HomeInteractorImpl(private val repository: HomeRepository) : HomeInteracto
         )
     }
 
-    private fun HotSaleResponse.toHotSale(): HotSale = HotSale(name = title, description = subtitle, isNew = isNew)
+    private fun HotSaleResponse.toHotSale(): HotSale = HotSale(
+        name = title,
+        description = subtitle,
+        isNew = isNew,
+        image = picture
+    )
 
     private fun HomeResponse.toUiBestSellers(): HomeItem.BestSeller {
         return HomeItem.BestSeller(
@@ -39,10 +44,10 @@ class HomeInteractorImpl(private val repository: HomeRepository) : HomeInteracto
 
     private fun BestSellerResponse.toBestSeller(): BestSellerProduct = BestSellerProduct(
         name = title,
-        isLiked = isFavorites,
-        image = picture,
         price = "$discountPrice",
-        priceWithoutSale = "$priceWithoutDiscount"
+        priceWithoutSale = "$priceWithoutDiscount",
+        isLiked = isFavorites,
+        image = picture
     )
 
 }

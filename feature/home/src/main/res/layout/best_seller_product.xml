@@ -40,11 +40,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="$300"
         android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/productName"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productImage" />
 
     <TextView
         android:id="@+id/productPriceWithoutSale"
@@ -65,6 +67,7 @@
         android:layout_marginBottom="15dp"
         android:text="Xiaomi Mi 10 Pro"
         android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productPrice" />
 

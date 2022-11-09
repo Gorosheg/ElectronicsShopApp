@@ -6,5 +6,5 @@ data class HotSale(
     val name: String,
     val description: String,
     val isNew: Boolean,
-    //val image: String,
+    val image: String,
 ) : ListItem
