@@ -230,8 +230,8 @@
             android:layout_marginTop="35dp"
             app:layout_constraintEnd_toStartOf="@+id/sdImage"
             app:layout_constraintStart_toEndOf="@id/cameraImage"
-            app:layout_constraintTop_toBottomOf="@+id/separator"/>
-            <!--app:srcCompat="@drawable/ic_parameter_3"-->
+            app:layout_constraintTop_toBottomOf="@+id/separator" />
+        <!--app:srcCompat="@drawable/ic_parameter_3"-->
 
         <ImageView
             android:id="@+id/sdImage"
@@ -296,25 +296,19 @@
             app:layout_constraintTop_toBottomOf="@+id/CPU" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/colorsRecycler"
+            android:id="@+id/colorsCapacityRecycler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="14dp"
+            android:layout_marginEnd="63dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/colorCapacityHeader"
             tools:itemCount="2"
             tools:listitem="@layout/color_item" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/colorCapacityRecycler"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="58dp"
-            app:layout_constraintStart_toEndOf="@+id/colorsRecycler"
-            app:layout_constraintTop_toBottomOf="@+id/colorCapacityHeader"
-            tools:itemCount="2"
-            tools:listitem="@layout/capacity_item" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -325,7 +319,7 @@
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/colorsRecycler">
+            app:layout_constraintTop_toBottomOf="@+id/colorsCapacityRecycler">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -339,8 +333,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="14dp"
                 android:layout_gravity="end"
+                android:layout_marginVertical="14dp"
                 android:layout_marginEnd="38dp"
                 android:textColor="@color/white"
                 android:textSize="20sp"

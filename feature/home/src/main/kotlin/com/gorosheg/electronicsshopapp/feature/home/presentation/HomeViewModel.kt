@@ -18,7 +18,6 @@ internal class HomeViewModel(private val repository: HomeRepository) : ViewModel
 
     init {
         viewModelScope.launch {
-
             val adapterItems: List<HomeItem> = listOf(
                 buildHeader(),
                 buildCategories(),
