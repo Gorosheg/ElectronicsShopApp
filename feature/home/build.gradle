@@ -40,5 +40,4 @@ android {
 dependencies {
     implementation project(':common')
     implementation project(':network')
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.2'
 }

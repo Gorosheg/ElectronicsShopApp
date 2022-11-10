@@ -33,7 +33,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         headerDelegate(),
         hotSalesDelegate(),
         headerDelegate(),
-        bestSellerDelegate()
+        bestSellerDelegate(::navigateToProductDetailsFragment)
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
@@ -49,6 +49,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun showFilterDialog() {
         FilterFragment().show(childFragmentManager, "tag")
+    }
+
+    private fun navigateToProductDetailsFragment() {
+        navigator.navigateToProductDetails(requireActivity())
     }
 
     companion object {

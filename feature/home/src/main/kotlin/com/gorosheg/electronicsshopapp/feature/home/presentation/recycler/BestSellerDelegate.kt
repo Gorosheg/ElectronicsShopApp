@@ -10,9 +10,9 @@ import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeItem
 import com.gorosheg.mainscreen.databinding.BestSellerProductBinding
 import com.gorosheg.mainscreen.databinding.ListOfBestSellerBinding
 
-internal fun bestSellerDelegate() =
+internal fun bestSellerDelegate(onProductClick: () -> Unit) =
     adapterDelegate<HomeItem.BestSeller, ListOfBestSellerBinding>(ListOfBestSellerBinding::inflate) {
-        val bestSellerAdapter = CommonAdapter(bestSellerProductDelegate())
+        val bestSellerAdapter = CommonAdapter(bestSellerProductDelegate(onProductClick))
         bestSellerList.layoutManager = GridLayoutManager(context, 2)
         bestSellerList.adapter = bestSellerAdapter
 
@@ -21,9 +21,10 @@ internal fun bestSellerDelegate() =
         }
     }
 
-private fun bestSellerProductDelegate() =
+private fun bestSellerProductDelegate(onProductClick: () -> Unit) =
     adapterDelegate<BestSellerProduct, BestSellerProductBinding>(BestSellerProductBinding::inflate) {
         bind {
+            root.setOnClickListener { onProductClick.invoke() }
             productName.text = item.name
             productPrice.text = item.price
             productPriceWithoutSale.text = item.priceWithoutSale
