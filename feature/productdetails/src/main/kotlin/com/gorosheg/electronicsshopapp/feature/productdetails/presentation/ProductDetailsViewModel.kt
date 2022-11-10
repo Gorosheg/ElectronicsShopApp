@@ -5,11 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.gorosheg.electronicsshopapp.feature.productdetails.domain.ProductDetailsRepository
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.CapacityItem
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ColorItem
-import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ProductDetailsItem
+import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ImageItem
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ProductDetailsViewState
 import com.gorosheg.electronicsshopapp.network.model.ProductDetailsResponse
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 
 internal class ProductDetailsViewModel(private val repository: ProductDetailsRepository) : ViewModel() {
 
@@ -17,39 +18,45 @@ internal class ProductDetailsViewModel(private val repository: ProductDetailsRep
 
     init {
         viewModelScope.launch {
-            val adapterItems: List<ProductDetailsItem> = listOf(
-                buildColors(),
-                buildCapacity()
-            )
-            state.value = ProductDetailsViewState(adapterItems)
+            state.value = getProductDetails()
         }
     }
 
-    private suspend fun buildColors(): ProductDetailsItem.Color {
-        return getProductDetails().toUiColors()
+    private suspend fun getProductDetails(): ProductDetailsViewState {
+        return repository.getProductDetails().toUiDetails()
     }
 
-    private suspend fun buildCapacity(): ProductDetailsItem.Capacity {
-        return getProductDetails().toUiCapacity()
-    }
-
-    private suspend fun getProductDetails(): ProductDetailsResponse {
-        return repository.getProductDetails()
-    }
-
-    private fun ProductDetailsResponse.toUiColors(): ProductDetailsItem.Color {
-        return ProductDetailsItem.Color(
-            colors = color.map {
-                ColorItem(colorValue = it, isSelected = false)
-            }
+    private fun ProductDetailsResponse.toUiDetails(): ProductDetailsViewState {
+        return ProductDetailsViewState(
+            title = title,
+            rating = rating.roundToInt(),
+            isFavorite = isFavorites,
+            CPU = CPU,
+            camera = camera,
+            sd = sd,
+            ssd = ssd,
+            colors = getUiColors(color),
+            capacity = getUiCapacity(capacity),
+            images = getUiImage(images),
+            price = price,
         )
     }
 
-    private fun ProductDetailsResponse.toUiCapacity(): ProductDetailsItem.Capacity {
-        return ProductDetailsItem.Capacity(
-            capacity = capacity.map {
-                CapacityItem(capacityValue = it, isSelected = false)
-            }
-        )
+    private fun getUiColors(colors: List<String>): List<ColorItem> {
+        return colors.mapIndexed { index, item ->
+            ColorItem(colorValue = item, isSelected = index == 0)
+        }
+    }
+
+    private fun getUiCapacity(capacity: List<String>): List<CapacityItem> {
+        return capacity.mapIndexed { index, item ->
+            CapacityItem(capacityValue = item, isSelected = index == 0)
+        }
+    }
+
+    private fun getUiImage(images: List<String>): List<ImageItem> {
+        return images.map { item ->
+            ImageItem(image = item)
+        }
     }
 }

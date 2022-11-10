@@ -58,7 +58,7 @@
         app:srcCompat="@drawable/ic_cart" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listOfProductImages"
+        android:id="@+id/imagesRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="37dp"
@@ -91,7 +91,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/addToFavorites"
+            android:id="@+id/addToFavoritesBackground"
             android:layout_width="37dp"
             android:layout_height="37dp"
             android:layout_marginEnd="37dp"
@@ -100,12 +100,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/addToFavorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/addToFavorites"
-            app:layout_constraintEnd_toEndOf="@+id/addToFavorites"
-            app:layout_constraintStart_toStartOf="@+id/addToFavorites"
-            app:layout_constraintTop_toTopOf="@+id/addToFavorites"
+            app:layout_constraintBottom_toBottomOf="@+id/addToFavoritesBackground"
+            app:layout_constraintEnd_toEndOf="@+id/addToFavoritesBackground"
+            app:layout_constraintStart_toStartOf="@+id/addToFavoritesBackground"
+            app:layout_constraintTop_toTopOf="@+id/addToFavoritesBackground"
             app:srcCompat="@drawable/ic_like_white" />
 
         <LinearLayout
@@ -296,19 +297,26 @@
             app:layout_constraintTop_toBottomOf="@+id/CPU" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/colorsCapacityRecycler"
+            android:id="@+id/colorsRecycler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="14dp"
-            android:layout_marginEnd="63dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/colorCapacityHeader"
             tools:itemCount="2"
             tools:listitem="@layout/color_item" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/capacityRecycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="58dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/colorsRecycler"
+            app:layout_constraintTop_toBottomOf="@+id/colorCapacityHeader"
+            tools:itemCount="2"
+            tools:listitem="@layout/capacity_item" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -319,7 +327,7 @@
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/colorsCapacityRecycler">
+            app:layout_constraintTop_toBottomOf="@+id/colorsRecycler">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -331,6 +339,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
