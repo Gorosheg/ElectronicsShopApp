@@ -26,6 +26,11 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         viewModel.state.onEach(::render).launchIn(lifecycleScope)
         productsRecycler.adapter = cartItemsAdapter
+        backButton.setOnClickListener { navigateBackToProductDetailsFragment() }
+    }
+
+    private fun navigateBackToProductDetailsFragment() {
+        navigator.back(requireActivity())
     }
 
     private fun render(state: MyCartViewState) = with(binding) {
