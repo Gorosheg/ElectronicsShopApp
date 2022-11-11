@@ -15,6 +15,7 @@ private const val MY_CART = "MyCartFragment"
 private const val PRODUCT_DETAILS = "ProductDetailsFragment"
 
 class NavigatorImpl : MainNavigator, HomeNavigator, ProductDetailsNavigator, MyCartNavigator {
+
     override fun navigateToHome(activity: FragmentActivity) {
         val fragment = HomeFragment.newInstance()
         activity.navigateToNextFragment(fragment, HOME)
