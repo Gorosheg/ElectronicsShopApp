@@ -2,8 +2,9 @@ package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler
 
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
-import com.gorosheg.common.R.*
+import com.gorosheg.common.R.drawable
 import com.gorosheg.electronicsshopapp.common.recycler.CommonAdapter
+import com.gorosheg.electronicsshopapp.common.recycler.adapter
 import com.gorosheg.electronicsshopapp.common.recycler.adapterDelegate
 import com.gorosheg.electronicsshopapp.feature.home.presentation.model.BestSellerProduct
 import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeItem
@@ -12,7 +13,7 @@ import com.gorosheg.mainscreen.databinding.ListOfBestSellerBinding
 
 internal fun bestSellerDelegate(onProductClick: () -> Unit) =
     adapterDelegate<HomeItem.BestSeller, ListOfBestSellerBinding>(ListOfBestSellerBinding::inflate) {
-        val bestSellerAdapter = CommonAdapter(bestSellerProductDelegate(onProductClick))
+        val bestSellerAdapter = bestSellerProductDelegate(onProductClick)
         bestSellerList.layoutManager = GridLayoutManager(context, 2)
         bestSellerList.adapter = bestSellerAdapter
 
@@ -22,7 +23,7 @@ internal fun bestSellerDelegate(onProductClick: () -> Unit) =
     }
 
 private fun bestSellerProductDelegate(onProductClick: () -> Unit) =
-    adapterDelegate<BestSellerProduct, BestSellerProductBinding>(BestSellerProductBinding::inflate) {
+    adapter<BestSellerProduct, BestSellerProductBinding>(BestSellerProductBinding::inflate) {
         bind {
             root.setOnClickListener { onProductClick.invoke() }
             productName.text = item.name

@@ -1,4 +1,4 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.di
+package com.gorosheg.electronicsshopapp.feature.mycart
 
 import com.gorosheg.electronicsshopapp.feature.mycart.data.MyCartRepositoryImpl
 import com.gorosheg.electronicsshopapp.feature.mycart.domain.MyCartRepository

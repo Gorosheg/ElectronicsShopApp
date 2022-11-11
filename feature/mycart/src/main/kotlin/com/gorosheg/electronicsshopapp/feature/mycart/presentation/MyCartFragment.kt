@@ -5,7 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.gorosheg.electronicsshopapp.feature.mycart.navigator.MyCartNavigator
+import com.gorosheg.electronicsshopapp.feature.mycart.MyCartNavigator
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.MyCartViewState
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.recycler.cartDelegate
 import com.gorosheg.mycart.R
@@ -29,16 +29,16 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
         backButton.setOnClickListener { navigateBackToProductDetailsFragment() }
     }
 
-    private fun navigateBackToProductDetailsFragment() {
-        navigator.back(requireActivity())
-    }
-
     private fun render(state: MyCartViewState) = with(binding) {
         cartItemsAdapter.items = state.basket
         cartItemsAdapter.notifyDataSetChanged()
 
         totalCoast.text = "\$ ${state.total} us"
         deliveryCoast.text = state.delivery
+    }
+
+    private fun navigateBackToProductDetailsFragment() {
+        navigator.back(requireActivity())
     }
 
     companion object {

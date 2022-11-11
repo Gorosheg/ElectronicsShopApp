@@ -8,10 +8,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 private const val BASE_URL = "https://run.mocky.io/v3/"
+private const val TIME_OUT: Long = 90
 
 val networkModule = module {
 
-    single<ElectronicsShopApi>  {
+    single<ElectronicsShopApi> {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(get())
@@ -22,8 +23,8 @@ val networkModule = module {
 
     single {
         OkHttpClient().newBuilder()
-            .connectTimeout(90, TimeUnit.SECONDS)
-            .readTimeout(90, TimeUnit.SECONDS)
+            .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
+            .readTimeout(TIME_OUT, TimeUnit.SECONDS)
             .addInterceptor(get<HttpLoggingInterceptor>())
             .build()
     }

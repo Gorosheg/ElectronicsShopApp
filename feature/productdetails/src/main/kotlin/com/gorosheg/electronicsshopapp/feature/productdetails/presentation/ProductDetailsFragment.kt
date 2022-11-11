@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.common.R.drawable
-import com.gorosheg.electronicsshopapp.feature.productdetails.navigator.ProductDetailsNavigator
+import com.gorosheg.electronicsshopapp.feature.productdetails.ProductDetailsNavigator
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ProductDetailsViewState
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.capacityDelegate
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.colorDelegate
@@ -45,14 +45,6 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         backButton.setOnClickListener { navigateBackToHomeFragment() }
     }
 
-    private fun navigateToCartFragment() {
-        navigator.navigateToMyCart(requireActivity())
-    }
-
-    private fun navigateBackToHomeFragment() {
-        navigator.back(requireActivity())
-    }
-
     private fun render(state: ProductDetailsViewState) = with(binding) {
         colorAdapter.items = state.colors
         colorAdapter.notifyDataSetChanged()
@@ -80,37 +72,27 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     }
 
     private fun setRating(state: ProductDetailsViewState) = with(binding) {
-        when (state.rating) {
-            0 -> {
-                star1.isVisible = false
-                star2.isVisible = false
-                star3.isVisible = false
-                star4.isVisible = false
-                star5.isVisible = false
-            }
-            1 -> {
-                star2.isVisible = false
-                star3.isVisible = false
-                star4.isVisible = false
-                star5.isVisible = false
-            }
-            2 -> {
-                star3.isVisible = false
-                star4.isVisible = false
-                star5.isVisible = false
-            }
-            3 -> {
-                star4.isVisible = false
-                star5.isVisible = false
-            }
-            4 -> {
-                star5.isVisible = false
-            }
-            else -> {}
-        }
+        star1.isVisible = state.rating >= AWFUL_RATING
+        star2.isVisible = state.rating >= BAD_RATING
+        star3.isVisible = state.rating >= MEDIUM_RATING
+        star4.isVisible = state.rating >= GOOD_RATING
+        star5.isVisible = state.rating >= GREAT_RATING
+    }
+
+    private fun navigateToCartFragment() {
+        navigator.navigateToMyCart(requireActivity())
+    }
+
+    private fun navigateBackToHomeFragment() {
+        navigator.back(requireActivity())
     }
 
     companion object {
         fun newInstance() = ProductDetailsFragment()
+        const val AWFUL_RATING = 1
+        const val BAD_RATING = 2
+        const val MEDIUM_RATING = 3
+        const val GOOD_RATING = 4
+        const val GREAT_RATING = 5
     }
 }

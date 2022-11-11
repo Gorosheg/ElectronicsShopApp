@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.gorosheg.electronicsshopapp.feature.mycart.domain.MyCartRepository
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.BasketItem
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.MyCartViewState
-import com.gorosheg.electronicsshopapp.network.model.Basket
+import com.gorosheg.electronicsshopapp.network.model.BasketResponse
 import com.gorosheg.electronicsshopapp.network.model.CartResponse
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -33,7 +33,7 @@ internal class MyCartViewModel(private val repository: MyCartRepository) : ViewM
         )
     }
 
-    private fun getUiBasket(baskets: List<Basket>): List<BasketItem> {
+    private fun getUiBasket(baskets: List<BasketResponse>): List<BasketItem> {
         return baskets.map { item ->
             BasketItem(
                 id = item.id,

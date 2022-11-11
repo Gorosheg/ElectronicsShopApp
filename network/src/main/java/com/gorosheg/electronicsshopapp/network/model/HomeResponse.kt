@@ -8,5 +8,5 @@ data class HomeResponse(
     @SerializedName("best_seller")
     val bestSellers: List<BestSellerResponse>,
     @SerializedName("home_store")
-    val hotSales: List<HotSaleResponse>
+    val hotSales: List<HotSaleResponse>,
 )

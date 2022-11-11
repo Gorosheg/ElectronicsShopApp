@@ -12,7 +12,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="11dp"
         android:layout_weight="1"
-        android:background="@drawable/white_rect_background_radius_50"
+        android:background="@drawable/background_white_rect_radius_50"
         android:drawableLeft="@drawable/ic_search"
         android:padding="24dp"
         android:queryHint="Search"
@@ -26,7 +26,7 @@
         android:layout_height="34dp"
         android:layout_marginStart="11dp"
         android:layout_marginEnd="37dp"
-        android:background="@drawable/orange_circle_background"
+        android:background="@drawable/background_orange_circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

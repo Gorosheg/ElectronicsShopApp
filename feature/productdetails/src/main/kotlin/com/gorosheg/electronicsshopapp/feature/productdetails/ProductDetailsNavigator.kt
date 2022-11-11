@@ -1,4 +1,4 @@
-package com.gorosheg.electronicsshopapp.feature.productdetails.navigator
+package com.gorosheg.electronicsshopapp.feature.productdetails
 
 import androidx.fragment.app.FragmentActivity
 

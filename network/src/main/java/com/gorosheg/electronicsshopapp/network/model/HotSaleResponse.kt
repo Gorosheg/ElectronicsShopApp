@@ -9,5 +9,5 @@ data class HotSaleResponse(
     val isNew: Boolean,
     val picture: String,
     val subtitle: String,
-    val title: String
+    val title: String,
 )

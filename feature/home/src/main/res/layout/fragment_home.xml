@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/dark_top_rounded_rect_background_radius_30"
+        android:background="@drawable/background_dark_top_rounded_rect_radius_30"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -87,7 +87,7 @@
                 android:layout_height="8dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="40dp"
-                app:srcCompat="@drawable/white_circle_background" />
+                app:srcCompat="@drawable/background_white_circle" />
 
             <TextView
                 android:layout_width="wrap_content"

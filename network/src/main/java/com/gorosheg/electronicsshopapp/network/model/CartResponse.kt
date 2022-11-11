@@ -4,8 +4,8 @@ import androidx.annotation.Keep
 
 @Keep
 data class CartResponse(
-    val basket: List<Basket>,
+    val basket: List<BasketResponse>,
     val delivery: String,
     val id: String,
-    val total: Int
+    val total: Int,
 )

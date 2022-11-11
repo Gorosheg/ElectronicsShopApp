@@ -2,12 +2,11 @@ package com.gorosheg.electronicsshopapp.feature.home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gorosheg.electronicsshopapp.feature.home.domain.HomeRepository
+import com.gorosheg.electronicsshopapp.feature.home.presentation.model.*
 import com.gorosheg.electronicsshopapp.network.model.BestSellerResponse
 import com.gorosheg.electronicsshopapp.network.model.HomeResponse
 import com.gorosheg.electronicsshopapp.network.model.HotSaleResponse
-import com.gorosheg.electronicsshopapp.feature.home.domain.HomeRepository
-import com.gorosheg.electronicsshopapp.feature.home.presentation.model.*
-import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeViewState
 import com.gorosheg.mainscreen.R
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

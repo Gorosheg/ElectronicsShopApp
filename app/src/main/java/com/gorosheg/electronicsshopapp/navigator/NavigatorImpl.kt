@@ -3,11 +3,11 @@ package com.gorosheg.electronicsshopapp.navigator
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.gorosheg.electronicsshopapp.R
-import com.gorosheg.electronicsshopapp.feature.home.navigator.HomeNavigator
+import com.gorosheg.electronicsshopapp.feature.home.HomeNavigator
 import com.gorosheg.electronicsshopapp.feature.home.presentation.HomeFragment
-import com.gorosheg.electronicsshopapp.feature.mycart.navigator.MyCartNavigator
+import com.gorosheg.electronicsshopapp.feature.mycart.MyCartNavigator
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.MyCartFragment
-import com.gorosheg.electronicsshopapp.feature.productdetails.navigator.ProductDetailsNavigator
+import com.gorosheg.electronicsshopapp.feature.productdetails.ProductDetailsNavigator
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.ProductDetailsFragment
 
 private const val HOME = "HomeFragment"

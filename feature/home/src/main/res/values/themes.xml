@@ -12,7 +12,7 @@
     </style>
 
     <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/white_top_rounded_rect_background_radius_30</item>
+        <item name="android:background">@drawable/background_white_top_rounded_rect_radius_30</item>
     </style>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.gorosheg.electronicsshopapp.feature.home.di
+package com.gorosheg.electronicsshopapp.feature.home
 
 import com.gorosheg.electronicsshopapp.feature.home.data.HomeRepositoryImpl
 import com.gorosheg.electronicsshopapp.feature.home.domain.HomeRepository

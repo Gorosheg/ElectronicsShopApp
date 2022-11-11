@@ -10,7 +10,7 @@
         android:id="@+id/productImage"
         android:layout_width="88dp"
         android:layout_height="88dp"
-        android:background="@drawable/white_rect_background_radius_10"
+        android:background="@drawable/background_white_rect_radius_10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -15,5 +15,5 @@ data class ProductDetailsResponse(
     val rating: Double,
     val sd: String,
     val ssd: String,
-    val title: String
+    val title: String,
 )
