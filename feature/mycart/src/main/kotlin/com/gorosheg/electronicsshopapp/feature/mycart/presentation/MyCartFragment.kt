@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.electronicsshopapp.feature.mycart.navigator.MyCartNavigator
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.MyCartViewState
+import com.gorosheg.electronicsshopapp.feature.mycart.presentation.recycler.cartDelegate
 import com.gorosheg.mycart.R
 import com.gorosheg.mycart.databinding.FragmentMyCartBinding
 import kotlinx.coroutines.flow.launchIn
@@ -20,11 +21,20 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     private val navigator: MyCartNavigator by inject()
     private val binding: FragmentMyCartBinding by viewBinding()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    private val cartItemsAdapter = cartDelegate()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         viewModel.state.onEach(::render).launchIn(lifecycleScope)
+        productsRecycler.adapter = cartItemsAdapter
     }
 
-    private fun render(state: MyCartViewState) = with(binding) {}
+    private fun render(state: MyCartViewState) = with(binding) {
+        cartItemsAdapter.items = state.basket
+        cartItemsAdapter.notifyDataSetChanged()
+
+        totalCoast.text = "\$ ${state.total} us"
+        deliveryCoast.text = state.delivery
+    }
 
     companion object {
         fun newInstance() = MyCartFragment()

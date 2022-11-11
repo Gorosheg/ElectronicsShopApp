@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginBottom="46dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="46dp">
 
     <ImageView
         android:id="@+id/productImage"
@@ -26,11 +26,11 @@
 
     <TextView
         android:id="@+id/productPrice"
-        android:textColor="@color/orange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_marginTop="6dp"
+        android:textColor="@color/orange"
         app:layout_constraintStart_toEndOf="@+id/productImage"
         app:layout_constraintTop_toBottomOf="@+id/productTitle"
         tools:text="$3000.00" />
@@ -51,25 +51,28 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/subtractProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"
-                android:text="-" />
+                android:text="-"
+                android:textColor="@color/white" />
 
             <TextView
+                android:id="@+id/amountOfProducts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
                 tools:text="2" />
 
             <TextView
+                android:id="@+id/addProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"
-                android:text="+" />
+                android:text="+"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

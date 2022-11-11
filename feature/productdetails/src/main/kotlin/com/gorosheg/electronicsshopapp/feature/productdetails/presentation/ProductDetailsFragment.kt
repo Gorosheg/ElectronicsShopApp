@@ -38,7 +38,9 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
         capacityRecycler.layoutManager = GridLayoutManager(context, 2)
         capacityRecycler.adapter = capacityAdapter
+
         imagesRecycler.adapter = imageAdapter
+
         cartButton.setOnClickListener { navigateToCartFragment() }
         backButton.setOnClickListener { navigateBackToHomeFragment() }
     }
