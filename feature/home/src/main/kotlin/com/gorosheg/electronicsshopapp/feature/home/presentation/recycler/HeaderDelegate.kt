@@ -9,7 +9,7 @@ import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 internal fun headerDelegate() =
     adapterDelegate<HomeItem.Header, HeaderWithTextBinding>(HeaderWithTextBinding::inflate) {
         bind {
-            title.text = item.title
-            subtitle.text = item.subtitle
+            title.text = context.getString(item.title)
+            subtitle.text = context.getString(item.subtitle)
         }
     }

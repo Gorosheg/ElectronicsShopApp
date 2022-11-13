@@ -19,6 +19,7 @@ internal fun bestSellerDelegate(onProductClick: () -> Unit) =
 
         bind {
             bestSellerAdapter.items = item.products
+            bestSellerAdapter.notifyDataSetChanged()
         }
     }
 

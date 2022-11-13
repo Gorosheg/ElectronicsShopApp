@@ -1,5 +1,6 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.model
 
+import androidx.annotation.StringRes
 import com.gorosheg.electronicsshopapp.common.recycler.ListItem
 
 internal sealed interface HomeItem : ListItem {
@@ -7,8 +8,8 @@ internal sealed interface HomeItem : ListItem {
     object Search : HomeItem
 
     class Header(
-        val title: String,
-        val subtitle: String,
+        @StringRes val title: Int,
+        @StringRes val subtitle: Int,
     ) : HomeItem
 
     class Categories(

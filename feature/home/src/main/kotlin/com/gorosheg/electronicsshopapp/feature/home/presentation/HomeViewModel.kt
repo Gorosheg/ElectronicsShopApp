@@ -16,14 +16,22 @@ internal class HomeViewModel(private val repository: HomeRepository) : ViewModel
     val state = MutableStateFlow(HomeViewState())
 
     init {
+        setState(selectedCategoryId = 0)
+    }
+
+    fun changeCategory(selectedCategoryId: Int) {
+        setState(selectedCategoryId)
+    }
+
+    private fun setState(selectedCategoryId: Int) {
         viewModelScope.launch {
             val adapterItems: List<HomeItem> = listOf(
-                buildHeader(),
-                buildCategories(),
+                buildHeader(Header.CATEGORY),
+                buildCategories(selectedCategoryId),
                 buildSearch(),
-                buildHeader(),
+                buildHeader(Header.HOT_SALES),
                 buildHotSales(),
-                buildHeader(),
+                buildHeader(Header.BEST_SELLER),
                 buildBestSeller()
             )
 
@@ -31,19 +39,17 @@ internal class HomeViewModel(private val repository: HomeRepository) : ViewModel
         }
     }
 
-    private fun buildHeader(): HomeItem.Header {
-        return HomeItem.Header(/*R.string.select_category*/"Select Category", "view all")
-        // HomeItem.Header("Hot sales", "see more"),
-        // HomeItem.Header("Best Seller", "see more"),
-
+    private fun buildHeader(header: Header): HomeItem.Header {
+        return HomeItem.Header(header.title, header.subtitle)
     }
 
-    private fun buildCategories(): HomeItem.Categories {
+    private fun buildCategories(selectedCategoryId: Int): HomeItem.Categories {
         return HomeItem.Categories(listOf(
-            Category("Phones", R.drawable.ic_phones, true),
-            Category("Computer", R.drawable.ic_computer, false),
-            Category("Health", R.drawable.ic_health, false),
-            Category("Books", R.drawable.ic_books, false),
+            Category(0, "Phones", R.drawable.ic_phones, selectedCategoryId == 0),
+            Category(1, "Computer", R.drawable.ic_computer, selectedCategoryId == 1),
+            Category(2, "Health", R.drawable.ic_health, selectedCategoryId == 2),
+            Category(3, "Books", R.drawable.ic_books, selectedCategoryId == 3),
+            Category(4, "Books", R.drawable.ic_books, selectedCategoryId == 4),
         ))
     }
 
@@ -88,8 +94,8 @@ internal class HomeViewModel(private val repository: HomeRepository) : ViewModel
 
     private fun BestSellerResponse.toBestSeller(): BestSellerProduct = BestSellerProduct(
         name = title,
-        price = "$discountPrice",
-        priceWithoutSale = "$priceWithoutDiscount",
+        price = discountPrice.toString(),
+        priceWithoutSale = priceWithoutDiscount.toString(),
         isLiked = isFavorites,
         image = picture
     )

@@ -15,6 +15,7 @@ internal fun hotSalesDelegate() = adapterDelegate<HotSales, ListOfHotSalesBindin
 
     bind {
         hotSalesAdapter.items = item.sales
+        hotSalesAdapter.notifyDataSetChanged()
     }
 }
 
