@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="35dp"
+    android:layout_marginBottom="24dp"
     android:orientation="horizontal">
 
     <EditText
@@ -14,8 +16,9 @@
         android:layout_weight="1"
         android:background="@drawable/background_white_rect_radius_50"
         android:drawableLeft="@drawable/ic_search"
-        android:padding="24dp"
-        android:queryHint="Search"
+        android:hint="Search"
+        android:paddingHorizontal="24dp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/qr_Background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,4 +41,5 @@
         app:layout_constraintStart_toStartOf="@+id/qr_Background"
         app:layout_constraintTop_toTopOf="@+id/qr_Background"
         app:srcCompat="@drawable/ic_qr_code" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

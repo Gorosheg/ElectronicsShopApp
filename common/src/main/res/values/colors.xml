@@ -2,7 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="grey">#DCDCDC</color>
     <color name="background">#F5F5F5</color>
+    <color name="text_dark_color">#010035</color>
     <color name="orange">#FF6E4E</color>
+    <color name="light_grey">#DCDCDC</color>
+    <color name="deep_grey">#B3B3C3</color>
+    <color name="dark_grey">#282843</color>
 </resources>
