@@ -10,6 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.common.R.drawable
 import com.gorosheg.electronicsshopapp.feature.productdetails.ProductDetailsNavigator
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ProductDetailsViewState
+import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.ZoomLinearLayoutManager
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.capacityDelegate
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.colorDelegate
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.imageDelegate
@@ -39,6 +40,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         capacityRecycler.layoutManager = GridLayoutManager(context, 2)
         capacityRecycler.adapter = capacityAdapter
 
+        imagesRecycler.layoutManager = context?.let { ZoomLinearLayoutManager(it) }
         imagesRecycler.adapter = imageAdapter
 
         cartButton.setOnClickListener { navigateToCartFragment() }
