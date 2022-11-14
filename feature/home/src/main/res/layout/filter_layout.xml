@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:elevation="16dp"
     android:layout_height="wrap_content">
 
     <View
@@ -21,31 +22,35 @@
         app:layout_constraintEnd_toEndOf="@+id/exit_Background"
         app:layout_constraintStart_toStartOf="@+id/exit_Background"
         app:layout_constraintTop_toTopOf="@+id/exit_Background"
-        app:srcCompat="@drawable/ic_exit" />
+        app:srcCompat="@drawable/ic_exit"
+        android:contentDescription="@string/exit" />
 
     <TextView
         android:id="@+id/filterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
-        android:text="Filter options"
+        android:textColor="@color/text_dark_color"
+        android:text="@string/filter_options"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/done"
         app:layout_constraintStart_toEndOf="@id/exit_Background"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/done"
+        style="@style/Widget.Material3.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/orange"
-        android:text="Done"
+        android:text="@string/done"
         android:textAllCaps="false"
+        android:layout_marginEnd="20dp"
         android:textColor="@color/white"
         android:textSize="18sp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/filterTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -54,7 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="48dp"
-        android:text="Brand"
+        android:text="@string/brand"
+        android:textColor="@color/text_dark_color"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exit_Background" />
@@ -76,7 +82,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="Samsung"
+            android:text="@string/samsung"
+            android:textColor="@color/text_dark_color"
             android:textSize="18sp" />
 
         <ImageView
@@ -85,6 +92,7 @@
             android:layout_gravity="end"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="7dp"
+            android:contentDescription="@string/choose_variants_of_brand"
             android:src="@drawable/ic_arrow" />
     </FrameLayout>
 
@@ -93,8 +101,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
+        android:textColor="@color/text_dark_color"
         android:layout_marginTop="18dp"
-        android:text="Price"
+        android:text="@string/price"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/brandFilter" />
@@ -116,15 +125,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="$300 - $500"
+            android:text="@string/_0_1000"
+            android:textColor="@color/text_dark_color"
             android:textSize="18sp" />
 
         <ImageView
-            android:layout_width="18dp"
-            android:layout_height="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="7dp"
+            android:contentDescription="@string/choose_range_of_price"
             android:src="@drawable/ic_arrow" />
     </FrameLayout>
 
@@ -134,7 +145,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="18dp"
-        android:text="Size"
+        android:text="@string/size"
+        android:textColor="@color/text_dark_color"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceFilter" />
@@ -158,7 +170,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="4.5 to 5.5 inches"
+            android:text="@string/phone_size_range"
+            android:textColor="@color/text_dark_color"
             android:textSize="18sp" />
 
         <ImageView
@@ -167,6 +180,7 @@
             android:layout_gravity="end"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="7dp"
+            android:contentDescription="@string/choose_size_of_device"
             android:src="@drawable/ic_arrow" />
     </FrameLayout>
 

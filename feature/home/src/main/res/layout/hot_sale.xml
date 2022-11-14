@@ -42,6 +42,7 @@
             android:text="@string/new_product"
             android:textColor="@color/white"
             android:textSize="10sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/newBackground"
             app:layout_constraintEnd_toEndOf="@+id/newBackground"
             app:layout_constraintStart_toStartOf="@+id/newBackground"
@@ -56,6 +57,7 @@
             android:layout_marginTop="59dp"
             android:textColor="@color/white"
             android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Iphone 12" />
@@ -73,6 +75,7 @@
             tools:text="Súper. Mega. Rápido." />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buyNowButton"
             style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,8 +83,9 @@
             android:layout_marginStart="25dp"
             android:backgroundTint="@color/white"
             android:text="@string/buy_now"
-            android:textColor="@color/black"
+            android:textColor="@color/text_dark_color"
             android:textSize="11sp"
+            android:textStyle="bold"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

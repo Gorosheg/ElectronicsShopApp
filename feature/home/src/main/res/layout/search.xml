@@ -41,6 +41,7 @@
         app:layout_constraintEnd_toEndOf="@+id/qr_Background"
         app:layout_constraintStart_toStartOf="@+id/qr_Background"
         app:layout_constraintTop_toTopOf="@+id/qr_Background"
-        app:srcCompat="@drawable/ic_qr_code" />
+        app:srcCompat="@drawable/ic_qr_code"
+        android:contentDescription="@string/qr_code" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

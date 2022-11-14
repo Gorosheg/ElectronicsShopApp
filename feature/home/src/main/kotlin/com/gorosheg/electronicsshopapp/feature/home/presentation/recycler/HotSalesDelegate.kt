@@ -1,11 +1,13 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler
 
+import android.graphics.Paint
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.gorosheg.electronicsshopapp.common.recycler.adapter
 import com.gorosheg.electronicsshopapp.common.recycler.adapterDelegate
 import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HotSale
 import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeItem.HotSales
+import com.gorosheg.mainscreen.R
 import com.gorosheg.mainscreen.databinding.HotSaleBinding
 import com.gorosheg.mainscreen.databinding.ListOfHotSalesBinding
 
@@ -29,5 +31,11 @@ private fun hotSaleAdapter() = adapter<HotSale, HotSaleBinding>(HotSaleBinding::
         Glide.with(root)
             .load(item.image)
             .into(productImage)
+        root.setOnClickListener {
+            productName.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+            newText.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+            productDescription.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+            buyNowButton.setText(R.string.buy_now_underline)
+        }
     }
 }

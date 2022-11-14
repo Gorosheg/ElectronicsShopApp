@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"> <!--?attr/actionBarSize-->
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -25,6 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:contentDescription="@string/location"
                 app:srcCompat="@drawable/ic_location_orange" />
 
             <TextView
@@ -33,13 +34,15 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="11dp"
                 android:layout_marginEnd="8dp"
-                android:text="Zihuatanejo, Gro"
+                android:text="@string/zihuatanejo_gro"
+                android:textColor="@color/text_dark_color"
                 android:textSize="15sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:contentDescription="@null"
                 app:srcCompat="@drawable/ic_arrow" />
 
         </LinearLayout>
@@ -50,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="27dp"
+            android:contentDescription="@string/filters"
             android:foreground="?selectableItemBackground"
             android:padding="8dp"
             app:srcCompat="@drawable/ic_filter" />
@@ -59,11 +63,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeMainRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:paddingTop="56dp"
-        android:paddingBottom="97dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
@@ -89,6 +93,7 @@
                 android:layout_height="8dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="40dp"
+                android:contentDescription="@null"
                 app:srcCompat="@drawable/background_white_circle" />
 
             <TextView
@@ -96,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="7dp"
-                android:text="Explorer"
+                android:text="@string/explorer"
                 android:textColor="@color/white" />
 
         </LinearLayout>
@@ -106,6 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:contentDescription="@string/cart"
             app:srcCompat="@drawable/ic_cart" />
 
         <ImageView
@@ -113,6 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:contentDescription="@string/favorites"
             app:srcCompat="@drawable/ic_like_white" />
 
         <ImageView
@@ -120,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:contentDescription="@string/profile"
             app:srcCompat="@drawable/ic_profile" />
 
     </LinearLayout>

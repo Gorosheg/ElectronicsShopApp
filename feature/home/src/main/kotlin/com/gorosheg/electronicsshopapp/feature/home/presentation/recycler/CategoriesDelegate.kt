@@ -1,6 +1,6 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler
 
-import android.graphics.PorterDuff
+import androidx.core.content.ContextCompat
 import com.gorosheg.common.R
 import com.gorosheg.electronicsshopapp.common.recycler.adapter
 import com.gorosheg.electronicsshopapp.common.recycler.adapterDelegate
@@ -9,6 +9,7 @@ import com.gorosheg.electronicsshopapp.feature.home.presentation.model.Category
 import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeItem
 import com.gorosheg.mainscreen.databinding.CategoryBinding
 import com.gorosheg.mainscreen.databinding.ListOfCategoriesBinding
+
 
 internal fun categoriesDelegate(onCategoryClick: (Category) -> Unit) =
     adapterDelegate<HomeItem.Categories, ListOfCategoriesBinding>(ListOfCategoriesBinding::inflate) {
@@ -31,12 +32,18 @@ private fun categoryAdapter(onCategoryClick: (Category) -> Unit) =
 
             if (item.isSelected) {
                 categoryBackground.setCompatBackground(R.drawable.background_orange_circle)
-                categoryName.setTextColor(R.color.orange)
-                categoryImage.setColorFilter(R.color.white, PorterDuff.Mode.SRC_ATOP)
+                categoryName.setTextColor(context.getColor(R.color.orange))
+                categoryImage.setColorFilter(
+                    ContextCompat.getColor(context, R.color.white),
+                    android.graphics.PorterDuff.Mode.SRC_IN
+                )
             } else {
                 categoryBackground.setCompatBackground(R.drawable.background_white_circle)
-                categoryName.setTextColor(R.color.text_dark_color)
-                categoryImage.setColorFilter(R.color.deep_grey, PorterDuff.Mode.SRC_ATOP)
+                categoryName.setTextColor(context.getColor(R.color.text_dark_color))
+                categoryImage.setColorFilter(
+                    ContextCompat.getColor(context, R.color.light_grey),
+                    android.graphics.PorterDuff.Mode.SRC_IN
+                )
             }
         }
     }

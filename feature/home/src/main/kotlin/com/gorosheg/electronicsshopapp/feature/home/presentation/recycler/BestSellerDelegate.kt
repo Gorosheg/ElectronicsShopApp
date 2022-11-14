@@ -1,9 +1,9 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.recycler
 
+import android.graphics.Paint
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.gorosheg.common.R.drawable
-import com.gorosheg.electronicsshopapp.common.recycler.CommonAdapter
 import com.gorosheg.electronicsshopapp.common.recycler.adapter
 import com.gorosheg.electronicsshopapp.common.recycler.adapterDelegate
 import com.gorosheg.electronicsshopapp.feature.home.presentation.model.BestSellerProduct
@@ -40,5 +40,7 @@ private fun bestSellerProductDelegate(onProductClick: () -> Unit) =
             Glide.with(root)
                 .load(item.image)
                 .into(productImage)
+
+            productPriceWithoutSale.paintFlags = productPriceWithoutSale.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         }
     }
