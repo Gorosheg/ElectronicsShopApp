@@ -27,8 +27,8 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     private val navigator: ProductDetailsNavigator by inject()
     private val binding: FragmentProductDetailsBinding by viewBinding()
 
-    private val colorAdapter = colorDelegate()
-    private val capacityAdapter = capacityDelegate()
+    private val colorAdapter = colorDelegate {}
+    private val capacityAdapter = capacityDelegate {}
     private val imageAdapter = imageDelegate()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
@@ -70,7 +70,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         camera.text = state.camera
         ssd.text = state.ssd
         sd.text = state.sd
-        price.text = state.price.toString()
+        price.text = "$" + state.price
     }
 
     private fun setRating(state: ProductDetailsViewState) = with(binding) {

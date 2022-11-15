@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shop">Shop</string>
+    <string name="details">Details</string>
+    <string name="features">Features</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="product_sd">product sd</string>
+    <string name="product_ssd">product ssd</string>
+    <string name="product_camera_resolution">product camera resolution</string>
+    <string name="product_cpu">product cpu</string>
+    <string name="add_to_favorites">add to favorites</string>
+    <string name="go_to_cart">Go to cart</string>
+    <string name="product_details">Product Details</string>
+    <string name="go_back">go back</string>
+</resources>

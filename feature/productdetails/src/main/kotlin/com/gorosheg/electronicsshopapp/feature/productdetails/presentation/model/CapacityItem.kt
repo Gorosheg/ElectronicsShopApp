@@ -3,6 +3,7 @@ package com.gorosheg.electronicsshopapp.feature.productdetails.presentation.mode
 import com.gorosheg.electronicsshopapp.common.recycler.ListItem
 
 class CapacityItem(
+    val id: Int,
     val capacityValue: String,
-    val isSelected: Boolean,
+    var isSelected: Boolean,
 ) : ListItem

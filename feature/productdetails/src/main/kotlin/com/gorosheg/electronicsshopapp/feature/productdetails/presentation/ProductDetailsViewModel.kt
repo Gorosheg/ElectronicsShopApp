@@ -38,19 +38,19 @@ internal class ProductDetailsViewModel(private val repository: ProductDetailsRep
             colors = getUiColors(color),
             capacity = getUiCapacity(capacity),
             images = getUiImage(images),
-            price = price,
+            price = mapPrice(price),
         )
     }
 
     private fun getUiColors(colors: List<String>): List<ColorItem> {
         return colors.mapIndexed { index, item ->
-            ColorItem(colorValue = item, isSelected = index == 0)
+            ColorItem(colorValue = item, isSelected = index == 0, id = index)
         }
     }
 
     private fun getUiCapacity(capacity: List<String>): List<CapacityItem> {
         return capacity.mapIndexed { index, item ->
-            CapacityItem(capacityValue = item, isSelected = index == 0)
+            CapacityItem(capacityValue = item, isSelected = index == 0, id = index)
         }
     }
 
@@ -58,5 +58,12 @@ internal class ProductDetailsViewModel(private val repository: ProductDetailsRep
         return images.map { item ->
             ImageItem(image = item)
         }
+    }
+
+    private fun mapPrice(price: Int): String {
+        val priceInString = price.toDouble().toString() + "0"
+        return if (priceInString.length > 5) {
+            StringBuilder(priceInString).insert(priceInString.length - 6, ",").toString()
+        } else return priceInString
     }
 }

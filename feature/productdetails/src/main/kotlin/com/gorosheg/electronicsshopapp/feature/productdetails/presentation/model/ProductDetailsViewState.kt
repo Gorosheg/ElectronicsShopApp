@@ -14,5 +14,5 @@ internal class ProductDetailsViewState(
     val capacity: List<CapacityItem> = emptyList(),
     val images: List<ImageItem> = emptyList(),
 
-    val price: Int = 0,
+    val price: String = "",
 )
