@@ -24,7 +24,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val adapter = CommonAdapter(
         headerDelegate(),
-        categoriesDelegate { category -> viewModel.changeCategory(category.id) },
+        categoriesDelegate { viewModel.changeCategory(it) },
         searchDelegate(),
         headerDelegate(),
         hotSalesDelegate(),

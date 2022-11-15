@@ -13,7 +13,7 @@ internal fun ProductDetailsResponse.toUiDetails(): ProductDetailsViewState {
             title = title,
             rating = rating.roundToInt(),
             isFavorite = isFavorites,
-            cpu = CPU,
+            cpu = cpu,
             camera = camera,
             sd = sd,
             ssd = ssd,

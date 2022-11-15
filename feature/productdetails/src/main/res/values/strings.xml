@@ -13,4 +13,7 @@
     <string name="go_to_cart">Go to cart</string>
     <string name="product_details">Product Details</string>
     <string name="go_back">go back</string>
+    <string name="dollar">$</string>
+    <string name="gb_measure">\" GB\"</string>
+    <string name="cents">.00</string>
 </resources>

@@ -1,6 +1,6 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.model
 
-import com.gorosheg.electronicsshopapp.common.recycler.ListItem
+import com.gorosheg.electronicsshopapp.common.ListItem
 
 internal class HotSale(
     val name: String,

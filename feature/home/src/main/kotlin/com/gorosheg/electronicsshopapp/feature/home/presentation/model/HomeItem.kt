@@ -1,7 +1,7 @@
 package com.gorosheg.electronicsshopapp.feature.home.presentation.model
 
 import androidx.annotation.StringRes
-import com.gorosheg.electronicsshopapp.common.recycler.ListItem
+import com.gorosheg.electronicsshopapp.common.ListItem
 
 internal sealed interface HomeItem : ListItem {
 

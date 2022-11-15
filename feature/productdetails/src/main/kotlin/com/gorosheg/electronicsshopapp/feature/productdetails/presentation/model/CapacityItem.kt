@@ -1,6 +1,6 @@
 package com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model
 
-import com.gorosheg.electronicsshopapp.common.recycler.ListItem
+import com.gorosheg.electronicsshopapp.common.ListItem
 
 data class CapacityItem(
     val id: Int,

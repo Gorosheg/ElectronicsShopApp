@@ -25,8 +25,9 @@ internal fun bestSellerDelegate(onProductClick: () -> Unit) =
 
 private fun bestSellerProductDelegate(onProductClick: () -> Unit) =
     adapter<BestSellerProduct, BestSellerProductBinding>(BestSellerProductBinding::inflate) {
+        root.setOnClickListener { onProductClick.invoke() }
+
         bind {
-            root.setOnClickListener { onProductClick.invoke() }
             productName.text = item.name
             productPrice.text = item.price
             productPriceWithoutSale.text = item.priceWithoutSale

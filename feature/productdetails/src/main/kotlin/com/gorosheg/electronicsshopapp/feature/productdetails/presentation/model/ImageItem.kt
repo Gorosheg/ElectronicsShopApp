@@ -1,6 +1,6 @@
 package com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model
 
-import com.gorosheg.electronicsshopapp.common.recycler.ListItem
+import com.gorosheg.electronicsshopapp.common.ListItem
 
 class ImageItem(
     val image: String,

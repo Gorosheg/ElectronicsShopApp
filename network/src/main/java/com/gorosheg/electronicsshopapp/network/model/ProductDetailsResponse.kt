@@ -1,14 +1,15 @@
 package com.gorosheg.electronicsshopapp.network.model
 
 import androidx.annotation.Keep
+import com.google.gson.annotations.SerializedName
 
 @Keep
 data class ProductDetailsResponse(
-    val CPU: String,
+    @SerializedName("CPU")
+    val cpu: String,
     val camera: String,
     val capacity: List<String>,
     val color: List<String>,
-    val id: String,
     val images: List<String>,
     val isFavorites: Boolean,
     val price: Int,

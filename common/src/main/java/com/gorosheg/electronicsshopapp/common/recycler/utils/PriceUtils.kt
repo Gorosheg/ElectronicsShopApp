@@ -1,7 +1,7 @@
 package com.gorosheg.electronicsshopapp.common.recycler.utils
 
 fun mapPriceToString(price: Int): String {
-    val priceInString = "$price.00"
+    val priceInString = price.toString()
 
     return if (priceInString.length > THOUSAND_LENGTH) {
         StringBuilder(priceInString)
@@ -12,5 +12,5 @@ fun mapPriceToString(price: Int): String {
     }
 }
 
-private const val THOUSAND_LENGTH = 5
-private const val THOUSAND_SEPARATOR_PLACE = 6
+private const val THOUSAND_LENGTH = 2
+private const val THOUSAND_SEPARATOR_PLACE = 3

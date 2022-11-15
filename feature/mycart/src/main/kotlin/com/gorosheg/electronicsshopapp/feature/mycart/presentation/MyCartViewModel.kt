@@ -3,10 +3,11 @@ package com.gorosheg.electronicsshopapp.feature.mycart.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gorosheg.electronicsshopapp.feature.mycart.domain.MyCartRepository
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.BasketItem
+import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartBasketItem
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartViewState
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.utils.countTotalPrice
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.utils.toCartViewState
+import com.gorosheg.electronicsshopapp.network.model.ProductId
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -20,39 +21,38 @@ internal class MyCartViewModel(private val repository: MyCartRepository) : ViewM
         }
     }
 
-    fun subtractProduct(productId: Int) {
-        val newBasket: List<BasketItem> = state.value.basket.subtractProduct(productId)
+    fun subtractProduct(id: ProductId) {
+        val newBasket = state.value.basket.subtractProduct(id)
         updateBasket(newBasket)
     }
 
-    fun addProduct(productId: Int) {
-        val newBasket: List<BasketItem> = state.value.basket.addProduct(productId)
+    fun addProduct(id: ProductId) {
+        val newBasket = state.value.basket.addProduct(id)
         updateBasket(newBasket)
     }
 
-    private fun List<BasketItem>.subtractProduct(productId: Int): List<BasketItem> {
+    private fun List<CartBasketItem>.subtractProduct(id: ProductId): List<CartBasketItem> {
         return map { item ->
-            item.copy(amountOfItems =
-            if (item.id == productId && item.amountOfItems < 0) {
-                item.amountOfItems - 1
-            } else {
-                item.amountOfItems
-            })
+            val amountOfItems =
+                if (item.id == id && item.amountOfItems > 0) item.amountOfItems - 1
+                else item.amountOfItems
+
+            item.copy(amountOfItems = amountOfItems)
         }
     }
 
-    private fun List<BasketItem>.addProduct(productId: Int): List<BasketItem> {
+    private fun List<CartBasketItem>.addProduct(id: ProductId): List<CartBasketItem> {
         return map { item ->
-            item.copy(amountOfItems =
-            if (item.id == productId) {
-                item.amountOfItems + 1
-            } else {
-                item.amountOfItems
-            })
+            val amountOfItems =
+                if (item.id == id) item.amountOfItems + 1
+                else item.amountOfItems
+
+
+            item.copy(amountOfItems = amountOfItems)
         }
     }
 
-    private fun updateBasket(newBasket: List<BasketItem>) {
+    private fun updateBasket(newBasket: List<CartBasketItem>) {
         val newTotalPrice = countTotalPrice(newBasket)
         val newState = state.value.copy(basket = newBasket, total = newTotalPrice)
         state.value = newState

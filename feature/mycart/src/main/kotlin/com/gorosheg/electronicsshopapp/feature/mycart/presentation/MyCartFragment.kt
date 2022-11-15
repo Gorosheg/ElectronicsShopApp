@@ -36,7 +36,7 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
         cartItemsAdapter.items = state.basket
         cartItemsAdapter.notifyDataSetChanged()
 
-        totalCoast.text = "$${state.total.dropLast(3)} us"
+        totalCoast.text = "$${state.total} us"
         deliveryCoast.text = state.delivery
     }
 

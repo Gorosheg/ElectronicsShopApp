@@ -1,4 +1,4 @@
-package com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler
+package com.gorosheg.electronicsshopapp.common
 
 import android.content.Context
 import android.view.View

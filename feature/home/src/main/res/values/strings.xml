@@ -29,4 +29,8 @@
     <string name="location">location</string>
     <string name="exit">exit</string>
     <string name="qr_code">qr code</string>
+    <string name="phones">Phones</string>
+    <string name="computer">Computer</string>
+    <string name="health">Health</string>
+    <string name="books">Books</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.gorosheg.electronicsshopapp.common.recycler
 
+import com.gorosheg.electronicsshopapp.common.ListItem
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegatesManager
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter

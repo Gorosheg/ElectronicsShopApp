@@ -10,7 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.common.R.drawable
 import com.gorosheg.electronicsshopapp.feature.productdetails.ProductDetailsNavigator
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ProductDetailsViewState
-import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.ZoomLinearLayoutManager
+import com.gorosheg.electronicsshopapp.common.ZoomLinearLayoutManager
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.capacityDelegate
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.colorDelegate
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.imageDelegate
@@ -40,7 +40,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         capacityRecycler.layoutManager = GridLayoutManager(context, 2)
         capacityRecycler.adapter = capacityAdapter
 
-        imagesRecycler.layoutManager = context?.let { ZoomLinearLayoutManager(it) }
+        imagesRecycler.layoutManager = ZoomLinearLayoutManager(requireContext())
         imagesRecycler.adapter = imageAdapter
 
         cartButton.setOnClickListener { navigateToCartFragment() }
@@ -66,11 +66,11 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         addToFavorites.setImageResource(like)
         setRating(state)
 
-        CPU.text = state.cpu
+        cpu.text = state.cpu
         camera.text = state.camera
         ssd.text = state.ssd
         sd.text = state.sd
-        price.text = "$" + state.price
+        price.text = getString(R.string.dollar) + state.price + getString(R.string.cents)
     }
 
     private fun setRating(state: ProductDetailsViewState) = with(binding) {
@@ -90,11 +90,12 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     }
 
     companion object {
-        fun newInstance() = ProductDetailsFragment()
         const val AWFUL_RATING = 1
         const val BAD_RATING = 2
         const val MEDIUM_RATING = 3
         const val GOOD_RATING = 4
         const val GREAT_RATING = 5
+
+        fun newInstance() = ProductDetailsFragment()
     }
 }
