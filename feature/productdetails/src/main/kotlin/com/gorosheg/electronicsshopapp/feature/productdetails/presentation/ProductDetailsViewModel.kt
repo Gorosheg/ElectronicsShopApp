@@ -22,6 +22,24 @@ internal class ProductDetailsViewModel(private val repository: ProductDetailsRep
         }
     }
 
+    fun changeSelectedColor(itemId: Int) {
+        val newColors = state.value.colors.mapIndexed { index, item ->
+            item.copy(isSelected = itemId == index)
+        }
+
+        val newState = state.value.copy(colors = newColors)
+        state.value = newState
+    }
+
+    fun changeSelectedCapacity(itemId: Int) {
+        val newCapacity = state.value.capacity.mapIndexed { index, item ->
+            item.copy(isSelected = itemId == index)
+        }
+
+        val newState = state.value.copy(capacity = newCapacity)
+        state.value = newState
+    }
+
     private suspend fun getProductDetails(): ProductDetailsViewState {
         return repository.getProductDetails().toUiDetails()
     }
@@ -31,7 +49,7 @@ internal class ProductDetailsViewModel(private val repository: ProductDetailsRep
             title = title,
             rating = rating.roundToInt(),
             isFavorite = isFavorites,
-            CPU = CPU,
+            cpu = CPU,
             camera = camera,
             sd = sd,
             ssd = ssd,

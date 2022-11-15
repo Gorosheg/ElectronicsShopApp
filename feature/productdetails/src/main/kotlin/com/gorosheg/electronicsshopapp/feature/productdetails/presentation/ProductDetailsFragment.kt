@@ -27,8 +27,8 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     private val navigator: ProductDetailsNavigator by inject()
     private val binding: FragmentProductDetailsBinding by viewBinding()
 
-    private val colorAdapter = colorDelegate {}
-    private val capacityAdapter = capacityDelegate {}
+    private val colorAdapter = colorDelegate { viewModel.changeSelectedColor(it) }
+    private val capacityAdapter = capacityDelegate { viewModel.changeSelectedCapacity(it) }
     private val imageAdapter = imageDelegate()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
@@ -54,7 +54,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         capacityAdapter.items = state.capacity
         capacityAdapter.notifyDataSetChanged()
 
-        imageAdapter.items = state.images
+        imageAdapter.items = state.images + state.images + state.images
         imageAdapter.notifyDataSetChanged()
 
         productName.text = state.title
@@ -66,7 +66,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         addToFavorites.setImageResource(like)
         setRating(state)
 
-        CPU.text = state.CPU
+        CPU.text = state.cpu
         camera.text = state.camera
         ssd.text = state.ssd
         sd.text = state.sd

@@ -2,8 +2,8 @@ package com.gorosheg.electronicsshopapp.feature.productdetails.presentation.mode
 
 import com.gorosheg.electronicsshopapp.common.recycler.ListItem
 
-class ColorItem(
+data class ColorItem(
     val id: Int,
     val colorValue: String,
-    var isSelected: Boolean,
+    val isSelected: Boolean,
 ) : ListItem
