@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="minus">—</string>
+    <string name="plus">+</string>
+    <string name="delete_item">delete item</string>
+    <string name="my_cart">My Cart</string>
+    <string name="add_address">Add address</string>
+</resources>

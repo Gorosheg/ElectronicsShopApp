@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.electronicsshopapp.feature.mycart.MyCartNavigator
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.MyCartViewState
+import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartViewState
 import com.gorosheg.electronicsshopapp.feature.mycart.presentation.recycler.cartDelegate
 import com.gorosheg.mycart.R
 import com.gorosheg.mycart.databinding.FragmentMyCartBinding
@@ -21,7 +21,10 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     private val navigator: MyCartNavigator by inject()
     private val binding: FragmentMyCartBinding by viewBinding()
 
-    private val cartItemsAdapter = cartDelegate()
+    private val cartItemsAdapter = cartDelegate(
+        onSubtractClick = { viewModel.subtractProduct(it) },
+        onAddClick = { viewModel.addProduct(it) }
+    )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         viewModel.state.onEach(::render).launchIn(lifecycleScope)
@@ -29,11 +32,11 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
         backButton.setOnClickListener { navigateBackToProductDetailsFragment() }
     }
 
-    private fun render(state: MyCartViewState) = with(binding) {
+    private fun render(state: CartViewState) = with(binding) {
         cartItemsAdapter.items = state.basket
         cartItemsAdapter.notifyDataSetChanged()
 
-        totalCoast.text = "\$ ${state.total} us"
+        totalCoast.text = "$${state.total.dropLast(3)} us"
         deliveryCoast.text = state.delivery
     }
 
