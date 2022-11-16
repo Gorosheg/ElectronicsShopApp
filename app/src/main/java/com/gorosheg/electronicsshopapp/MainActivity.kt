@@ -1,5 +1,6 @@
 package com.gorosheg.electronicsshopapp
 
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.gorosheg.electronicsshopapp.navigator.MainNavigator
@@ -10,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private val navigator: MainNavigator by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_ElectronicsShopApp)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         createHomeFragment()

@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
-        android:textColor="@color/text_dark_color"
+        android:textColor="@color/dark_color"
         android:text="@string/filter_options"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/done"
@@ -60,7 +60,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="48dp"
         android:text="@string/brand"
-        android:textColor="@color/text_dark_color"
+        android:textColor="@color/dark_color"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exit_Background" />
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:text="@string/samsung"
-            android:textColor="@color/text_dark_color"
+            android:textColor="@color/dark_color"
             android:textSize="18sp" />
 
         <ImageView
@@ -101,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
-        android:textColor="@color/text_dark_color"
+        android:textColor="@color/dark_color"
         android:layout_marginTop="18dp"
         android:text="@string/price"
         android:textSize="18sp"
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:text="@string/_0_1000"
-            android:textColor="@color/text_dark_color"
+            android:textColor="@color/dark_color"
             android:textSize="18sp" />
 
         <ImageView
@@ -146,7 +146,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="18dp"
         android:text="@string/size"
-        android:textColor="@color/text_dark_color"
+        android:textColor="@color/dark_color"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceFilter" />
@@ -171,7 +171,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:text="@string/phone_size_range"
-            android:textColor="@color/text_dark_color"
+            android:textColor="@color/dark_color"
             android:textSize="18sp" />
 
         <ImageView

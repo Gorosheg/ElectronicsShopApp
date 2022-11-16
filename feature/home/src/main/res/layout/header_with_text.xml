@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_weight="1"
-        android:textColor="@color/text_dark_color"
+        android:textColor="@color/dark_color"
         android:textSize="25sp"
         android:textStyle="bold"
         tools:text="Select Category" />

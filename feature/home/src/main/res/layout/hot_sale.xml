@@ -83,7 +83,7 @@
             android:layout_marginStart="25dp"
             android:backgroundTint="@color/white"
             android:text="@string/buy_now"
-            android:textColor="@color/text_dark_color"
+            android:textColor="@color/dark_color"
             android:textSize="11sp"
             android:textStyle="bold"
             app:cornerRadius="5dp"

@@ -38,7 +38,7 @@ private fun categoryAdapter(onCategoryClick: (Int) -> Unit) =
             if (item.isSelected) {
                 selectCategory(R.drawable.background_orange_circle, R.color.orange, R.color.white)
             } else {
-                selectCategory(R.drawable.background_white_circle, R.color.text_dark_color, R.color.light_grey)
+                selectCategory(R.drawable.background_white_circle, R.color.dark_color, R.color.light_grey)
             }
         }
     }

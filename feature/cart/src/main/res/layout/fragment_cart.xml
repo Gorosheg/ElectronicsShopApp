@@ -34,7 +34,7 @@
         android:layout_marginTop="42dp"
         android:layout_marginEnd="9dp"
         android:text="@string/add_address"
-        android:textColor="@color/text_dark_color"
+        android:textColor="@color/dark_color"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/location_Button"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:textStyle="bold"
-        android:textColor="@color/text_dark_color"
+        android:textColor="@color/dark_color"
         android:text="@string/my_cart"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/cartBody"
