@@ -8,9 +8,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.common.R.drawable
+import com.gorosheg.electronicsshopapp.common.ZoomLinearLayoutManager
 import com.gorosheg.electronicsshopapp.feature.productdetails.ProductDetailsNavigator
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ProductDetailsViewState
-import com.gorosheg.electronicsshopapp.common.ZoomLinearLayoutManager
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.capacityDelegate
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.colorDelegate
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.recycler.imageDelegate
@@ -54,7 +54,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         capacityAdapter.items = state.capacity
         capacityAdapter.notifyDataSetChanged()
 
-        imageAdapter.items = state.images + state.images + state.images
+        imageAdapter.items = state.images
         imageAdapter.notifyDataSetChanged()
 
         productName.text = state.title
