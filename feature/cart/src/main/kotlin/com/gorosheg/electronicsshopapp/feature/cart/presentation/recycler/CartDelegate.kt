@@ -1,8 +1,8 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.presentation.recycler
+package com.gorosheg.electronicsshopapp.feature.cart.presentation.recycler
 
 import com.bumptech.glide.Glide
 import com.gorosheg.electronicsshopapp.common.recycler.adapter
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartBasketItem
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartBasketItem
 import com.gorosheg.electronicsshopapp.network.model.ProductId
 import com.gorosheg.mycart.databinding.ProductItemBinding
 

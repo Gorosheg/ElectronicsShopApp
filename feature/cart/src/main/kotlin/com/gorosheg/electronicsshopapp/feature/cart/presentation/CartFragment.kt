@@ -1,25 +1,25 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.presentation
+package com.gorosheg.electronicsshopapp.feature.cart.presentation
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.gorosheg.electronicsshopapp.feature.mycart.MyCartNavigator
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartViewState
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.recycler.cartDelegate
+import com.gorosheg.electronicsshopapp.feature.cart.CartNavigator
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartViewState
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.recycler.cartDelegate
 import com.gorosheg.mycart.R
-import com.gorosheg.mycart.databinding.FragmentMyCartBinding
+import com.gorosheg.mycart.databinding.FragmentCartBinding
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
+class CartFragment : Fragment(R.layout.fragment_cart) {
 
-    private val viewModel: MyCartViewModel by viewModel()
-    private val navigator: MyCartNavigator by inject()
-    private val binding: FragmentMyCartBinding by viewBinding()
+    private val viewModel: CartViewModel by viewModel()
+    private val navigator: CartNavigator by inject()
+    private val binding: FragmentCartBinding by viewBinding()
 
     private val cartItemsAdapter = cartDelegate(
         onSubtractClick = { viewModel.subtractProduct(it) },
@@ -36,7 +36,7 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
         cartItemsAdapter.items = state.basket
         cartItemsAdapter.notifyDataSetChanged()
 
-        totalCoast.text = "$${state.total} us"
+        totalCoast.text = getString(R.string.dollar) + state.total + getString(R.string.us_country_code)
         deliveryCoast.text = state.delivery
     }
 
@@ -45,6 +45,6 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     }
 
     companion object {
-        fun newInstance() = MyCartFragment()
+        fun newInstance() = CartFragment()
     }
 }

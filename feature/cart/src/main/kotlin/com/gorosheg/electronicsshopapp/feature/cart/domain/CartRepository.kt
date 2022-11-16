@@ -1,7 +1,7 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.domain
+package com.gorosheg.electronicsshopapp.feature.cart.domain
 
 import com.gorosheg.electronicsshopapp.network.model.CartResponse
 
-interface MyCartRepository {
+interface CartRepository {
     suspend fun getCart(): CartResponse
 }

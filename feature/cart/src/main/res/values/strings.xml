@@ -5,4 +5,6 @@
     <string name="delete_item">delete item</string>
     <string name="my_cart">My Cart</string>
     <string name="add_address">Add address</string>
+    <string name="dollar">$</string>
+    <string name="us_country_code"> us</string>
 </resources>

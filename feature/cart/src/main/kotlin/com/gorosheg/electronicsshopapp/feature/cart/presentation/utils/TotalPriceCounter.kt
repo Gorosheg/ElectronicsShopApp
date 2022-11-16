@@ -1,7 +1,7 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.presentation.utils
+package com.gorosheg.electronicsshopapp.feature.cart.presentation.utils
 
 import com.gorosheg.electronicsshopapp.common.recycler.utils.mapPriceToString
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartBasketItem
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartBasketItem
 
 internal fun countTotalPrice(baskets: List<CartBasketItem>): String {
     val listPrices: List<Int> = baskets.map(CartBasketItem::getItemPrice)

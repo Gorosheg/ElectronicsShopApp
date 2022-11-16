@@ -1,8 +1,8 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.presentation.utils
+package com.gorosheg.electronicsshopapp.feature.cart.presentation.utils
 
 import com.gorosheg.electronicsshopapp.common.recycler.utils.mapPriceToString
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartBasketItem
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartViewState
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartBasketItem
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartViewState
 import com.gorosheg.electronicsshopapp.network.model.BasketResponse
 import com.gorosheg.electronicsshopapp.network.model.CartResponse
 

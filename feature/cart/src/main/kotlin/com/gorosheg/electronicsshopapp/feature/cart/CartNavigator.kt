@@ -1,7 +1,7 @@
-package com.gorosheg.electronicsshopapp.feature.mycart
+package com.gorosheg.electronicsshopapp.feature.cart
 
 import androidx.fragment.app.FragmentActivity
 
-interface MyCartNavigator {
+interface CartNavigator {
     fun back(activity: FragmentActivity)
 }

@@ -5,16 +5,16 @@ import androidx.fragment.app.FragmentActivity
 import com.gorosheg.electronicsshopapp.R
 import com.gorosheg.electronicsshopapp.feature.home.HomeNavigator
 import com.gorosheg.electronicsshopapp.feature.home.presentation.HomeFragment
-import com.gorosheg.electronicsshopapp.feature.mycart.MyCartNavigator
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.MyCartFragment
+import com.gorosheg.electronicsshopapp.feature.cart.CartNavigator
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.CartFragment
 import com.gorosheg.electronicsshopapp.feature.productdetails.ProductDetailsNavigator
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.ProductDetailsFragment
 
 private const val HOME = "HomeFragment"
-private const val MY_CART = "MyCartFragment"
+private const val CART = "CartFragment"
 private const val PRODUCT_DETAILS = "ProductDetailsFragment"
 
-class NavigatorImpl : MainNavigator, HomeNavigator, ProductDetailsNavigator, MyCartNavigator {
+class NavigatorImpl : MainNavigator, HomeNavigator, ProductDetailsNavigator, CartNavigator {
 
     override fun navigateToHome(activity: FragmentActivity) {
         val fragment = HomeFragment.newInstance()
@@ -27,8 +27,8 @@ class NavigatorImpl : MainNavigator, HomeNavigator, ProductDetailsNavigator, MyC
     }
 
     override fun navigateToMyCart(activity: FragmentActivity) {
-        val fragment = MyCartFragment.newInstance()
-        activity.navigateToNextFragment(fragment, MY_CART)
+        val fragment = CartFragment.newInstance()
+        activity.navigateToNextFragment(fragment, CART)
     }
 
     private fun FragmentActivity.navigateToNextFragment(fragment: Fragment, fragmentKey: String) {

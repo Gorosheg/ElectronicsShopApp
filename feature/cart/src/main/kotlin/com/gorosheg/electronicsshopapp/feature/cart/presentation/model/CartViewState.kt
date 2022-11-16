@@ -1,4 +1,4 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.presentation.model
+package com.gorosheg.electronicsshopapp.feature.cart.presentation.model
 
 internal data class CartViewState(
     val basket: List<CartBasketItem> = emptyList(),

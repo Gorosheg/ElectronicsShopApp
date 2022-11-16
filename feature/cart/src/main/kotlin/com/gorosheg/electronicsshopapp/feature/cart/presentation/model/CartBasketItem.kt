@@ -1,4 +1,4 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.presentation.model
+package com.gorosheg.electronicsshopapp.feature.cart.presentation.model
 
 import com.gorosheg.electronicsshopapp.common.ListItem
 import com.gorosheg.electronicsshopapp.network.model.ProductId

@@ -1,17 +1,17 @@
-package com.gorosheg.electronicsshopapp.feature.mycart.presentation
+package com.gorosheg.electronicsshopapp.feature.cart.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gorosheg.electronicsshopapp.feature.mycart.domain.MyCartRepository
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartBasketItem
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.model.CartViewState
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.utils.countTotalPrice
-import com.gorosheg.electronicsshopapp.feature.mycart.presentation.utils.toCartViewState
+import com.gorosheg.electronicsshopapp.feature.cart.domain.CartRepository
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartBasketItem
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartViewState
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.utils.countTotalPrice
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.utils.toCartViewState
 import com.gorosheg.electronicsshopapp.network.model.ProductId
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-internal class MyCartViewModel(private val repository: MyCartRepository) : ViewModel() {
+internal class CartViewModel(private val repository: CartRepository) : ViewModel() {
 
     val state = MutableStateFlow(CartViewState())
 

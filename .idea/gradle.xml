@@ -13,8 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/cart" />
             <option value="$PROJECT_DIR$/feature/home" />
-            <option value="$PROJECT_DIR$/feature/mycart" />
             <option value="$PROJECT_DIR$/feature/productdetails" />
             <option value="$PROJECT_DIR$/network" />
           </set>
