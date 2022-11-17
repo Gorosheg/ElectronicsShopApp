@@ -34,7 +34,7 @@ internal class CartViewModel(private val repository: CartRepository) : ViewModel
     private fun List<CartBasketItem>.subtractProduct(id: ProductId): List<CartBasketItem> {
         return map { item ->
             val amountOfItems =
-                if (item.id == id && item.amountOfItems > 0) item.amountOfItems - 1
+                if (item.id == id && item.amountOfItems > 1) item.amountOfItems - 1
                 else item.amountOfItems
 
             item.copy(amountOfItems = amountOfItems)

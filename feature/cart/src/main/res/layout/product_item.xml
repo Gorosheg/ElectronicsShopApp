@@ -6,14 +6,22 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="46dp">
 
-    <ImageView
-        android:id="@+id/productImage"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productImageCard"
         android:layout_width="88dp"
         android:layout_height="88dp"
-        android:background="@drawable/background_white_rect_radius_10"
-        android:contentDescription="@null"
+        app:cardCornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/productTitle"
@@ -24,7 +32,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/cardView"
-        app:layout_constraintStart_toEndOf="@+id/productImage"
+        app:layout_constraintStart_toEndOf="@+id/productImageCard"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Galaxy Note 20 Ultra" />
 
@@ -36,7 +44,7 @@
         android:layout_marginTop="6dp"
         android:textColor="@color/orange"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/productImage"
+        app:layout_constraintStart_toEndOf="@+id/productImageCard"
         app:layout_constraintTop_toBottomOf="@+id/productTitle"
         tools:text="$3000.00" />
 
@@ -61,30 +69,30 @@
                 android:id="@+id/subtractProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
+                android:padding="3dp"
                 android:text="@string/minus"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/amountOfProducts"
                 android:layout_width="wrap_content"
-                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 tools:text="2" />
 
             <TextView
                 android:id="@+id/addProduct"
-                android:textStyle="bold"
-                android:padding="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:padding="3dp"
                 android:text="@string/plus"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
