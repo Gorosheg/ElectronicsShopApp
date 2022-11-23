@@ -8,6 +8,7 @@ import com.gorosheg.electronicsshopapp.feature.home.presentation.model.HomeViewS
 import com.gorosheg.electronicsshopapp.feature.home.presentation.utils.toUiBestSellers
 import com.gorosheg.electronicsshopapp.feature.home.presentation.utils.toUiHotSales
 import com.gorosheg.electronicsshopapp.network.model.HomeResponse
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -25,18 +26,26 @@ internal class HomeViewModel(private val repository: HomeRepository) : ViewModel
 
     private fun setState(selectedCategoryId: Int) {
         viewModelScope.launch {
-            val adapterItems: List<HomeItem> = listOf(
-                buildHeader(Header.CATEGORY),
-                buildCategories(selectedCategoryId),
-                buildSearch(),
-                buildHeader(Header.HOT_SALES),
-                getAllProducts().toUiHotSales(),
-                buildHeader(Header.BEST_SELLER),
-                getAllProducts().toUiBestSellers()
-            )
-
-            state.value = HomeViewState(adapterItems)
+            try {
+                val adapterItems = buildState(selectedCategoryId)
+                state.value = HomeViewState(adapterItems)
+            } catch (e: Exception) {
+                if (e is CancellationException) throw e
+                e.printStackTrace()
+            }
         }
+    }
+
+    private suspend fun buildState(selectedCategoryId: Int): List<HomeItem> {
+        return listOf(
+            buildHeader(Header.CATEGORY),
+            buildCategories(selectedCategoryId),
+            buildSearch(),
+            buildHeader(Header.HOT_SALES),
+            getAllProducts().toUiHotSales(),
+            buildHeader(Header.BEST_SELLER),
+            getAllProducts().toUiBestSellers()
+        )
     }
 
     private suspend fun getAllProducts(): HomeResponse {

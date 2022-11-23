@@ -8,7 +8,7 @@ import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model
 import com.gorosheg.electronicsshopapp.network.model.ProductDetailsResponse
 import kotlin.math.roundToInt
 
-internal fun ProductDetailsResponse.toUiDetails(): ProductDetailsViewState {
+internal fun ProductDetailsResponse.toUiDetailsState(): ProductDetailsViewState {
     return ProductDetailsViewState(
         title = title,
         rating = rating.roundToInt(),

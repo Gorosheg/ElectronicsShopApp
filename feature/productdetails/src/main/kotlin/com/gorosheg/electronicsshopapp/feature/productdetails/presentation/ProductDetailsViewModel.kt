@@ -4,7 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gorosheg.electronicsshopapp.feature.productdetails.domain.ProductDetailsRepository
 import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.model.ProductDetailsViewState
-import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.utils.toUiDetails
+import com.gorosheg.electronicsshopapp.feature.productdetails.presentation.utils.toUiDetailsState
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -14,7 +15,12 @@ internal class ProductDetailsViewModel(private val repository: ProductDetailsRep
 
     init {
         viewModelScope.launch {
-            state.value = getProductDetails()
+            try {
+                state.value = getProductDetails()
+            } catch (e: Exception) {
+                if (e is CancellationException) throw e
+                e.printStackTrace()
+            }
         }
     }
 
@@ -37,6 +43,6 @@ internal class ProductDetailsViewModel(private val repository: ProductDetailsRep
     }
 
     private suspend fun getProductDetails(): ProductDetailsViewState {
-        return repository.getProductDetails().toUiDetails()
+        return repository.getProductDetails().toUiDetailsState()
     }
 }

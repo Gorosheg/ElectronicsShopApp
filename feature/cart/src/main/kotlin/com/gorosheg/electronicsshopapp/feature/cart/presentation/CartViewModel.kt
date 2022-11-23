@@ -8,6 +8,7 @@ import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartViewS
 import com.gorosheg.electronicsshopapp.feature.cart.presentation.utils.countTotalPrice
 import com.gorosheg.electronicsshopapp.feature.cart.presentation.utils.toCartViewState
 import com.gorosheg.electronicsshopapp.network.model.ProductId
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -17,7 +18,12 @@ internal class CartViewModel(private val repository: CartRepository) : ViewModel
 
     init {
         viewModelScope.launch {
-            state.value = getCart()
+            try {
+                state.value = getCart()
+            } catch (e: Exception) {
+                if (e is CancellationException) throw e
+                e.printStackTrace()
+            }
         }
     }
 
