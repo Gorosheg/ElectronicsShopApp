@@ -11,7 +11,6 @@ private const val BASE_URL = "https://run.mocky.io/v3/"
 private const val TIME_OUT: Long = 90
 
 val networkModule = module {
-
     single<ElectronicsShopApi> {
         Retrofit.Builder()
             .baseUrl(BASE_URL)

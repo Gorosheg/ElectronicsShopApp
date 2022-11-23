@@ -7,7 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.gorosheg.electronicsshopapp.feature.cart.CartNavigator
 import com.gorosheg.electronicsshopapp.feature.cart.presentation.model.CartViewState
-import com.gorosheg.electronicsshopapp.feature.cart.presentation.recycler.cartDelegate
+import com.gorosheg.electronicsshopapp.feature.cart.presentation.recycler.cartAdapter
 import com.gorosheg.mycart.R
 import com.gorosheg.mycart.databinding.FragmentCartBinding
 import kotlinx.coroutines.flow.launchIn
@@ -21,7 +21,7 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
     private val navigator: CartNavigator by inject()
     private val binding: FragmentCartBinding by viewBinding()
 
-    private val cartItemsAdapter = cartDelegate(
+    private val cartItemsAdapter = cartAdapter(
         onSubtractClick = { viewModel.subtractProduct(it) },
         onAddClick = { viewModel.addProduct(it) }
     )

@@ -47,7 +47,6 @@ internal class CartViewModel(private val repository: CartRepository) : ViewModel
                 if (item.id == id) item.amountOfItems + 1
                 else item.amountOfItems
 
-
             item.copy(amountOfItems = amountOfItems)
         }
     }

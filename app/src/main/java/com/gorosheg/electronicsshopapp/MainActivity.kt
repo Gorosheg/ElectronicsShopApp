@@ -1,6 +1,5 @@
 package com.gorosheg.electronicsshopapp
 
-import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.gorosheg.electronicsshopapp.navigator.MainNavigator

@@ -9,13 +9,13 @@ import com.gorosheg.electronicsshopapp.network.model.HotSaleResponse
 
 internal fun HomeResponse.toUiHotSales(): HomeItem.HotSales {
     return HomeItem.HotSales(
-        sales = hotSales.map { it.toHotSale() }
+        sales = hotSales.map(HotSaleResponse::toHotSale)
     )
 }
 
 internal fun HomeResponse.toUiBestSellers(): HomeItem.BestSeller {
     return HomeItem.BestSeller(
-        products = bestSellers.map { it.toBestSeller() }
+        products = bestSellers.map(BestSellerResponse::toBestSeller)
     )
 }
 

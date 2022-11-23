@@ -26,9 +26,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         headerDelegate(),
         categoriesDelegate { viewModel.changeCategory(it) },
         searchDelegate(),
-        headerDelegate(),
         hotSalesDelegate(),
-        headerDelegate(),
         bestSellerDelegate(::navigateToProductDetailsFragment)
     )
 
